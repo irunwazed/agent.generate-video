@@ -46,6 +46,8 @@ export type Pose = {
   /** whole figure rotated to lie on the ground (+1 head to the facing side) */
   lying?: number;
   expr?: Expr;
+  /** gait phase (cycles) set by walking actions; idle poses use time */
+  phase?: number;
 };
 
 export type PropState = {
@@ -62,6 +64,8 @@ export type HoldStyle = {
   angle: number;
   /** grip positions along a long prop's shaft (PU): override the prop's default grips for this style */
   mainAt?: number; offAt?: number;
+  /** explicit grip points in the prop's local frame (PU) for this style (e.g. carry a gas cylinder by its top ring) */
+  mainGrip?: P2; offGrip?: P2;
   /** which arm takes the main grip (default "F") / the off grip (default "B" for two-handed props, else none) */
   main?: "F" | "B" | null; off?: "F" | "B" | null;
   layer?: "front" | "back" | "mid";
@@ -86,6 +90,8 @@ export type HoldIn = {
   from?: { pos: P2; angle: number; k: number };
   /** extra offset of the pin (HH, canonical) and extra angle (deg): used by actions (recoil, thrust, swing) */
   nudge?: { pos?: P2; angle?: number };
+  /** blend from another style of the same prop (swings: raise -> slash): k = 0 that style .. 1 this style */
+  blendFrom?: { style: string; k: number };
 };
 
 export type SolvedArm = { id: "F" | "B"; S: P2; E: P2; Hd: P2; front: boolean; above: boolean; grip: boolean; far: boolean; stretch: number };

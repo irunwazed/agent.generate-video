@@ -11,11 +11,16 @@
     "render:video": "node scripts/render-video.mjs",
     "render:captions": "node scripts/render-captions.mjs",
     "build": "remotion bundle src/index.ts",
-    "kit:gallery": "node scripts/render.mjs --comp KitPoseGallery,KitPropGallery --mode stills --frames all --scale 1 --out out/kit/gallery/",
+    "kit:gallery": "node scripts/render.mjs --comp KitCastGallery,KitPoseGallery,KitPropGallery --mode stills --frames all --scale 1 --out out/kit/gallery/",
     "kit:render": "node scripts/render.mjs",
-    "kit:check": "node scripts/check.mjs",
+    "kit:check": "node scripts/kit-run.mjs check",
     "skill:sync": "node scripts/sync-skill.mjs",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "kit:locations": "node scripts/render.mjs --comp KitLocationsShort --mode stills --frames all --scale 0.5 --out out/kit/locations/",
+    "kit:vehicles": "node scripts/render.mjs --comp KitVehiclesShort --mode stills --frames 15,45,75,105,135,165,195,225,255,285,315 --scale 0.5 --out out/kit/vehicles/",
+    "kit:sfx": "node scripts/kit-run.mjs sfx",
+    "kit:sfxmix": "python scripts/kit-sfx-mix.py",
+    "kit:frame": "node scripts/kit-run.mjs frame"
   },
   "keywords": [
     "remotion",

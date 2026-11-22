@@ -130,6 +130,7 @@ const AXE_STYLES: Record<string, HoldStyle> = {
 const ARROW_STYLES: Record<string, HoldStyle> = {
   hold: { at: "chest", pos: [0.3, 0.3], pin: "mid", angle: -78, main: "F", note: "arrow held upright" },
   give: { at: "shoulderF", pos: [0.8, 0.3], pin: "mid", angle: -10, main: "F", note: "arrow held out" },
+  stuck: { at: "chest", pos: [0.22, 0.05], pin: "tip", angle: 172, main: null, off: null, note: "stuck in the body after a hit (comic, no blood)" },
 };
 const HAMMER_STYLES: Record<string, HoldStyle> = {
   hold: { at: "shoulderF", pos: [0.2, 0.9], pin: "main", angle: 80, main: "F", note: "held at the side, head down" },
@@ -189,13 +190,14 @@ const SMALL_STYLES: Record<string, HoldStyle> = {
   show: { at: "shoulderF", pos: [0.5, -0.05], pin: "origin", angle: 0, main: "F", body: { expr: "smile" }, note: "shown forward at shoulder height" },
   high: { at: "shoulderF", pos: [0.45, -0.8], pin: "origin", angle: 0, main: "F", body: { expr: "smile" }, note: "held up high to show (idea, sketch, trophy)" },
   look: { at: "chest", pos: [0.24, -0.08], pin: "origin", angle: -8, main: "F", body: { headTilt: 6, headDy: 0.04 }, note: "looking at it (phone, letter, mirror)" },
-  ear: { at: "head", pos: [0.4, 0.16], pin: "origin", angle: -12, main: "F", aboveHead: true, note: "phone at the ear" },
+  ear: { at: "head", pos: [0.47, 0.3], pin: "origin", angle: -12, main: "F", aboveHead: true, note: "phone at the ear" },
   mouth: { at: "mouth", pos: [0.14, 0.12], pin: "origin", angle: -25, main: "F", aboveHead: true, note: "drinking / eating / speaking into it" },
   give: { at: "shoulderF", pos: [0.85, 0.32], pin: "origin", angle: 0, main: "F", note: "held out to someone (handOver)" },
+  windup: { at: "shoulderF", pos: [0.34, -0.6], pin: "origin", angle: -20, main: "F", body: { lean: -8, expr: "stern" }, note: "arm back over the shoulder, about to throw (throw action start)" },
 };
 const BOX_STYLES: Record<string, HoldStyle> = {
   carry: { at: "chest", pos: [0, 0.72], pin: "origin", angle: 0, main: "F", off: "B", note: "carried in front with both hands" },
-  lift: { at: "head", pos: [0, -0.5], pin: "origin", angle: 0, main: "F", off: "B", aboveHead: true, body: { expr: "pained" }, note: "lifted over the head" },
+  lift: { at: "head", pos: [0, -0.45], pin: "origin", angle: 0, main: "F", off: "B", aboveHead: true, body: { expr: "pained" }, note: "lifted over the head" },
   head: { at: "head", pos: [0, -0.66], pin: "origin", angle: 0, main: null, off: null, aboveHead: true, note: "balanced on the head (junjung), hands free" },
   shoulder: { at: "shoulderF", pos: [0.06, -0.2], pin: "origin", angle: -10, main: "F", off: null, note: "on the shoulder (sack)" },
 };
@@ -493,6 +495,319 @@ const drawSack = (p: Pen, U: number) => {
 };
 
 // =====================================================================================================================
+// MORE PROPS (bombs, clocks, more weapons, gas, construction tools, everyday items)
+// =====================================================================================================================
+/** the local direction that points DOWN on the final canvas (hanging lines, pouring liquid) */
+const worldDown = (p: Pen): P2 => {
+  const m = p.tf ?? [1, 0, 0, 1, 0, 0], det = m[0] * m[3] - m[1] * m[2] || 1;
+  const v: P2 = [-m[2] / det, m[0] / det], l = Math.hypot(v[0], v[1]) || 1;
+  return [v[0] / l, v[1] / l];
+};
+const THROW_STYLES: Record<string, HoldStyle> = {
+  ...SMALL_STYLES,
+  windup: { at: "shoulderF", pos: [0.34, -0.6], pin: "origin", angle: -20, main: "F", body: { lean: -8, expr: "stern" }, note: "arm back over the shoulder, about to throw (throw action start)" },
+};
+const MG_STYLES: Record<string, HoldStyle> = {
+  hip_fire: { view: "side", at: "hip", pos: [0.14, -0.12], pin: "main", angle: -4, main: "B", off: "F", body: { lean: 4, stance: "wide", expr: "battle" }, note: "firing from the hip, both hands" },
+  fire: { view: "side", at: "hip", pos: [0.14, -0.12], pin: "main", angle: -4, main: "B", off: "F", st: { flash: 1 }, body: { lean: 4, stance: "wide", expr: "battle" }, note: "hip fire + muzzle flash (aimFire action makes the burst)" },
+  aim: { view: "side", at: "shoulderF", pos: [0.1, 0.08], pin: "butt", angle: -1, main: "B", off: "F", body: { lean: 6, headTilt: 10, expr: "aim" }, note: "aimed from the shoulder" },
+  carry: { at: "shoulderF", pos: [0.2, 0.9], pin: "main", angle: 12, main: "F", note: "carried at the side" },
+  port: { at: "chest", pos: [0.22, 0.55], pin: "main", angle: -125, main: "F", off: "B", note: "held across the chest" },
+};
+const SHOVEL_STYLES: Record<string, HoldStyle> = {
+  rest: { at: "ground", pos: [0.55, 0], pin: "tip", angle: 92, mainAt: 0.08, main: "F", note: "blade on the ground, hand on the grip" },
+  shoulder: { at: "shoulderF", pos: [-0.04, 0.45], pin: "main", mainAt: 0.7, angle: -62, main: "F", note: "on the shoulder" },
+  raise: { view: "side", at: "shoulderF", pos: [-0.3, 0.12], pin: "main", mainAt: 0.1, offAt: 0.65, angle: -118, main: "B", off: "F", body: { lean: -8 }, note: "wind-up" },
+  dig: { view: "side", at: "hip", pos: [0.2, -0.22], pin: "main", mainAt: 0.1, offAt: 0.65, angle: 52, main: "B", off: "F", body: { lean: 20 }, note: "blade into the ground (dig action)" },
+};
+const SAW_STYLES: Record<string, HoldStyle> = {
+  hold: { at: "shoulderF", pos: [0.2, 0.9], pin: "main", angle: 75, main: "F", note: "held at the side" },
+  saw: { view: "side", at: "chest", pos: [0.3, 0.5], pin: "main", angle: 24, main: "F", body: { lean: 12 }, note: "pulled back (saw action alternates saw / saw_b)" },
+  saw_b: { view: "side", at: "chest", pos: [0.62, 0.64], pin: "main", angle: 24, main: "F", body: { lean: 16 }, note: "pushed forward" },
+};
+const DRILL_STYLES: Record<string, HoldStyle> = {
+  hold: { at: "shoulderF", pos: [0.22, 0.9], pin: "origin", angle: 80, main: "F", note: "held at the side" },
+  drill: { view: "side", at: "shoulderF", pos: [0.72, 0.18], pin: "origin", angle: 0, main: "F", off: "B", body: { lean: 6, expr: "stern" }, note: "drilling forward, other hand supporting" },
+  up: { at: "shoulderF", pos: [0.3, -0.5], pin: "origin", angle: -90, main: "F", note: "drilling the ceiling" },
+};
+const UMBRELLA_STYLES: Record<string, HoldStyle> = {
+  open: { at: "shoulderF", pos: [0.15, -0.28], pin: "main", mainAt: 0.15, angle: -88, main: "F", st: { open: 1 }, note: "open over the head" },
+  closed: { at: "ground", pos: [0.55, 0], pin: "tip", angle: 95, mainAt: 0.05, main: "F", st: { open: 0 }, note: "closed, used as a walking stick" },
+  carry: { at: "shoulderF", pos: [0.2, 0.9], pin: "main", mainAt: 0.6, angle: 10, main: "F", st: { open: 0 }, note: "closed, carried" },
+};
+const ROD_STYLES: Record<string, HoldStyle> = {
+  cast: { view: "side", at: "shoulderF", pos: [0.35, 0.38], pin: "main", mainAt: 0.3, angle: -32, main: "F", off: "B", offAt: 0.06, st: { open: 1 }, note: "fishing: rod up-forward, line in the water" },
+  hold: { at: "ground", pos: [0.5, 0], pin: "butt", angle: -84, mainAt: 1.85, main: "F", st: { open: 0.3 }, note: "standing with the rod upright" },
+  shoulder: { at: "shoulderF", pos: [-0.04, 0.5], pin: "main", mainAt: 0.5, angle: -62, main: "F", st: { open: 0.2 }, note: "on the shoulder" },
+};
+const POUR_STYLES: Record<string, HoldStyle> = {
+  low: { at: "shoulderF", pos: [0.22, 0.86], pin: "origin", angle: 0, main: "F", note: "carried by the handle" },
+  pour: { view: "side", at: "shoulderF", pos: [0.55, 0.3], pin: "origin", angle: 68, main: "F", off: "B", st: { flash: 1 }, body: { lean: 10 }, note: "tilted, pouring (pour action)" },
+  give: { at: "shoulderF", pos: [0.8, 0.3], pin: "origin", angle: 0, main: "F", note: "held out" },
+};
+const SPRAY_STYLES: Record<string, HoldStyle> = {
+  hold: { at: "chest", pos: [0.32, 0.22], pin: "origin", angle: 0, main: "F", note: "held in front" },
+  spray: { at: "shoulderF", pos: [0.7, 0.12], pin: "origin", angle: 0, main: "F", st: { flash: 1 }, body: { expr: "stern" }, note: "spraying forward (spray action)" },
+};
+const SLING_STYLES: Record<string, HoldStyle> = {
+  rest: { at: "shoulderF", pos: [0.22, 0.88], pin: "origin", angle: -80, main: "F", note: "held at the side" },
+  draw: { view: "side", at: "shoulderF", pos: [0.85, -0.12], pin: "origin", angle: 0, main: "F", off: "B", st: { draw: 1 }, body: { expr: "aim", headTilt: 4 }, note: "band pulled back to the cheek" },
+  release: { view: "side", at: "shoulderF", pos: [0.85, -0.12], pin: "origin", angle: 0, main: "F", off: null, st: { draw: 0 }, body: { expr: "aim", armB: { to: [-0.35, -0.28] } }, note: "just released" },
+};
+const LIGHT_STYLES: Record<string, HoldStyle> = {
+  point: { at: "shoulderF", pos: [0.75, 0.1], pin: "main", angle: 4, main: "F", st: { lit: 1 }, note: "shining the beam forward" },
+  low: { at: "shoulderF", pos: [0.22, 0.88], pin: "main", angle: 62, main: "F", st: { lit: 1 }, note: "beam on the ground ahead" },
+  up: { at: "shoulderF", pos: [0.3, -0.45], pin: "main", angle: -70, main: "F", st: { lit: 1 }, note: "beam up" },
+};
+const TROWEL_STYLES: Record<string, HoldStyle> = {
+  hold: { at: "shoulderF", pos: [0.22, 0.9], pin: "origin", angle: 70, main: "F", note: "held at the side" },
+  use: { at: "shoulderF", pos: [0.62, 0.55], pin: "origin", angle: 32, main: "F", body: { lean: 12 }, note: "spreading mortar" },
+};
+const CASE_STYLES: Record<string, HoldStyle> = {
+  low: { at: "shoulderF", pos: [0.22, 0.86], pin: "origin", angle: 0, main: "F", note: "carried by the handle" },
+  hold: { at: "chest", pos: [0.05, 0.35], pin: "origin", angle: 0, main: "F", note: "held up in front" },
+};
+const CAMERA_STYLES: Record<string, HoldStyle> = {
+  ...SMALL_STYLES,
+  shoot: { at: "head", pos: [0.34, 0.04], pin: "origin", angle: 0, main: "F", off: "B", aboveHead: true, note: "taking a photo (camera in front of the face)" },
+};
+const GAS_STYLES: Record<string, HoldStyle> = {
+  ...BOX_STYLES,
+  low: { at: "shoulderF", pos: [0.22, 0.88], pin: "main", angle: 0, mainGrip: [0, -0.4], main: "F", off: null, note: "carried by the top ring" },
+};
+
+const drawMG = (p: Pen, U: number, st: PropState) => {
+  const d = mk(p, U);
+  d.poly([[0.72, -0.05], [1.3, -0.045], [1.3, 0.005], [0.72, 0.02]], "#2e3238", d.ol);                  // barrel shroud
+  for (let x = 0.78; x < 1.24; x += 0.07) d.line([[x, -0.045], [x, 0.015]], 0.012, "#5a5f68");
+  d.poly([[0.74, 0.02], [0.86, 0.02], [0.84, 0.2], [0.76, 0.2]], WOOD, d.ol);                            // front grip
+  d.poly([[0, -0.06], [0.34, -0.05], [0.34, 0.05], [0.12, 0.11], [0, 0.12]], WOOD, d.ol);               // stock
+  d.poly([[0.32, -0.07], [0.74, -0.07], [0.74, 0.04], [0.32, 0.04]], GUN, d.ol);                          // receiver
+  d.poly([[0.38, 0.04], [0.46, 0.04], [0.44, 0.2], [0.36, 0.2]], "#4a3a30", d.ol);                       // pistol grip
+  d.ell(0.58, 0.16, 0.13, 0.13, "#2e3238"); d.ell(0.58, 0.16, 0.05, 0.05, "#5a5f68", d.ol * 0.5);      // drum
+  flash(d, [1.32, -0.02], st.flash ?? 0);
+};
+const drawKeris = (p: Pen, U: number, st: PropState) => {
+  const d = mk(p, U);
+  if (st.sheathed) {
+    d.poly([[0.16, -0.12], [0.3, -0.07], [0.3, 0.06], [0.16, 0.1], [0.12, 0]], "#6b3f22", d.ol);
+    d.poly([[0.3, -0.035], [0.78, -0.025], [0.8, 0.0], [0.78, 0.025], [0.3, 0.035]], "#8a5530", d.ol);
+  } else {
+    const pts: P2[] = [];
+    for (let i = 0; i <= 10; i++) { const x = 0.2 + 0.52 * (i / 10); pts.push([x, -0.035 * (1 - i / 11) + 0.022 * Math.sin(i * 1.6)]); }
+    pts.push([0.76, 0]);
+    for (let i = 10; i >= 0; i--) { const x = 0.2 + 0.52 * (i / 10); pts.push([x, 0.035 * (1 - i / 11) + 0.022 * Math.sin(i * 1.6)]); }
+    d.poly(pts, "#b8bcc4", d.ol);
+    d.poly([[0.17, -0.06], [0.22, -0.05], [0.22, 0.06], [0.17, 0.08]], "#c9a54a", d.ol * 0.7);
+  }
+  d.poly([[0, -0.03], [0.17, -0.035], [0.18, 0.035], [0.04, 0.05], [-0.04, 0.0]], "#4a2a18", d.ol);
+};
+const drawCelurit = (p: Pen, U: number) => {
+  const d = mk(p, U), pts: P2[] = [];
+  for (let i = 0; i <= 12; i++) { const a = Math.PI * (1.02 - 0.95 * (i / 12)); pts.push([0.52 + 0.26 * Math.cos(a), -0.06 - 0.3 * Math.sin(a)]); }
+  for (let i = 12; i >= 0; i--) { const a = Math.PI * (1.02 - 0.95 * (i / 12)); pts.push([0.52 + 0.2 * Math.cos(a), -0.06 - 0.23 * Math.sin(a)]); }
+  d.poly(pts, "#d8dde3", d.ol);
+  d.poly([[0, -0.035], [0.27, -0.035], [0.27, 0.035], [0, 0.035]], "#5a3a22", d.ol);
+};
+const drawKnife = (p: Pen, U: number) => {
+  const d = mk(p, U);
+  d.poly([[0.18, -0.035], [0.4, -0.03], [0.5, -0.01], [0.42, 0.03], [0.18, 0.035]], "#dfe4ea", d.ol);
+  d.rr(0, -0.03, 0.18, 0.035, 0.015, "#2b2b30");
+};
+const drawBaton = (p: Pen, U: number) => {
+  const d = mk(p, U);
+  d.band([[0, 0], [0.75, 0]], "#1e1e24", 0.05);
+  for (let x = 0.02; x < 0.2; x += 0.04) d.line([[x, -0.025], [x, 0.025]], 0.008, "#4a4a52");
+};
+const drawClub = (p: Pen, U: number) => {
+  const d = mk(p, U);
+  d.poly([[0, -0.035], [0.4, -0.05], [0.8, -0.1], [1.05, -0.08], [1.1, 0.0], [1.05, 0.1], [0.8, 0.12], [0.4, 0.05], [0, 0.035]], "#a8784a", d.ol);
+  for (const [x, y] of [[0.7, -0.03], [0.92, 0.04], [0.55, 0.02]] as P2[]) d.ell(x, y, 0.025, 0.018, "#7a5030", 0);
+};
+const drawBone = (p: Pen, U: number) => {
+  const d = mk(p, U);
+  d.rr(0.04, -0.035, 0.56, 0.035, 0.02, "#f3efe2");
+  for (const x of [0.02, 0.58]) { d.ell(x, -0.05, 0.05, 0.05, "#f3efe2"); d.ell(x, 0.05, 0.05, 0.05, "#f3efe2"); }
+  d.rr(0.04, -0.03, 0.56, 0.03, 0.02, "#f3efe2", 0);
+};
+const drawCrowbar = (p: Pen, U: number) => {
+  const d = mk(p, U);
+  d.band([[0, 0], [1.35, 0], [1.45, -0.08], [1.5, -0.04]], "#3d4a5a", 0.04);
+};
+const drawShovel = (p: Pen, U: number) => {
+  const d = mk(p, U);
+  d.band([[0.08, 0], [1.15, 0]], "#b08a5a", 0.045);
+  d.rr(-0.02, -0.08, 0.1, 0.08, 0.03, "#7a5a3a");
+  d.poly([[1.12, -0.12], [1.42, -0.14], [1.56, 0], [1.42, 0.14], [1.12, 0.12]], "#9aa0a8", d.ol);
+};
+const drawSaw = (p: Pen, U: number) => {
+  const d = mk(p, U);
+  d.poly([[0.2, -0.08], [1.0, -0.03], [1.0, 0.04], [0.2, 0.13]], "#c9ced6", d.ol);
+  for (let x = 0.24; x < 0.98; x += 0.05) d.poly([[x, 0.12 - (x - 0.2) * 0.11], [x + 0.025, 0.155 - (x - 0.2) * 0.11], [x + 0.05, 0.12 - (x - 0.2) * 0.11]], "#9aa0a8", 0);
+  d.poly([[0, -0.1], [0.22, -0.1], [0.24, 0.15], [0.02, 0.12]], "#a8784a", d.ol);
+  d.ell(0.11, 0.02, 0.05, 0.06, "#ffffff00", d.ol * 0.8);
+};
+const drawDrill = (p: Pen, U: number) => {
+  const d = mk(p, U);
+  d.poly([[-0.04, 0.02], [0.06, 0.02], [0.04, 0.2], [-0.06, 0.2]], "#2b2b30", d.ol);
+  d.rr(-0.08, -0.1, 0.32, 0.03, 0.03, "#e8762a");
+  d.rr(0.32, -0.065, 0.4, -0.005, 0.01, "#3d4148");
+  d.line([[0.4, -0.035], [0.58, -0.035]], 0.016, "#9aa0a8");
+};
+const drawWrench = (p: Pen, U: number) => {
+  const d = mk(p, U);
+  d.band([[0, 0], [0.45, 0]], "#9aa3ad", 0.05);
+  d.poly([[0.42, -0.08], [0.56, -0.1], [0.58, -0.03], [0.5, -0.02], [0.5, 0.02], [0.58, 0.03], [0.56, 0.1], [0.42, 0.08]], "#9aa3ad", d.ol);
+};
+const drawTrowel = (p: Pen, U: number) => {
+  const d = mk(p, U);
+  d.rr(-0.03, -0.12, 0.03, 0.04, 0.02, "#a8784a");
+  d.poly([[0, -0.12], [0.16, -0.2], [0, -0.42], [-0.16, -0.2]], "#c9ced6", d.ol);
+};
+const drawTape = (p: Pen, U: number, st: PropState) => {
+  const d = mk(p, U), L = (st.open ?? 0) * 1.1;
+  if (L > 0) { d.rr(0.06, -0.12, 0.06 + L, -0.07, 0.005, "#f2c230", d.ol * 0.5); for (let x = 0.1; x < 0.06 + L; x += 0.1) d.line([[x, -0.12], [x, -0.1]], 0.008); }
+  d.rr(-0.1, -0.2, 0.08, 0.0, 0.04, "#e8c430"); d.ell(-0.01, -0.1, 0.04, 0.04, "#2b2b30", d.ol * 0.5);
+};
+const drawBrick = (p: Pen, U: number) => { const d = mk(p, U); d.rr(-0.14, -0.14, 0.14, 0.02, 0.01, "#b85a3a"); d.line([[-0.1, -0.06], [0.1, -0.06]], 0.008, "#8a3a22"); };
+const drawBomb = (p: Pen, U: number, st: PropState) => {
+  const d = mk(p, U);
+  d.ell(0, -0.17, 0.17, 0.17, "#2b2b34");
+  d.ell(-0.06, -0.24, 0.04, 0.03, "#6a6a78", 0);
+  d.rr(-0.05, -0.36, 0.05, -0.31, 0.01, "#5a5a66");
+  d.line([[0, -0.36], [0.06, -0.44], [0.12, -0.46]], 0.014, "#c9a46a");
+  if (st.lit) { const w = Math.sin((st.wave ?? 0) * Math.PI * 6) * 0.02; for (let i = 0; i < 6; i++) { const a = rad(i * 60 + 15); d.line([[0.12, -0.46], [0.12 + Math.cos(a) * (0.07 + w), -0.46 + Math.sin(a) * (0.07 + w)]], 0.012, "#ffd84a"); } d.dot(0.12, -0.46, 0.03, "#fff3b0"); }
+};
+const drawDynamite = (p: Pen, U: number, st: PropState) => {
+  const d = mk(p, U);
+  for (const x of [-0.09, 0, 0.09]) d.rr(x - 0.045, -0.38, x + 0.045, 0.02, 0.02, "#c8302a");
+  d.rr(-0.14, -0.22, 0.14, -0.16, 0.0, "#2b2b30", d.ol * 0.6);
+  d.line([[0, -0.38], [0.05, -0.47], [0.1, -0.48]], 0.014, "#c9a46a");
+  if (st.lit) d.dot(0.1, -0.48, 0.035, "#ffd84a");
+};
+const drawGrenade = (p: Pen, U: number) => {
+  const d = mk(p, U);
+  d.ell(0, -0.14, 0.1, 0.13, "#4f5f36");
+  for (const y of [-0.2, -0.13, -0.06]) d.line([[-0.09, y], [0.09, y]], 0.008, "#2f3a20");
+  d.rr(-0.04, -0.3, 0.04, -0.25, 0.01, "#7d848e");
+  d.line([[0.04, -0.28], [0.12, -0.16]], 0.016, "#7d848e");
+  p.arc(-0.07 * U, -0.3 * U, 0.04 * U, 0.04 * U, 0, 360, d.ol * 0.6);
+};
+const drawPocketWatch = (p: Pen, U: number) => {
+  const d = mk(p, U);
+  d.line([[0, 0.02], [0, -0.08]], 0.008, "#c9a54a");
+  d.ell(0, -0.2, 0.12, 0.12, "#e8c45a"); d.ell(0, -0.2, 0.09, 0.09, "#fbf7ec", d.ol * 0.5);
+  d.line([[0, -0.2], [0, -0.26]], 0.01); d.line([[0, -0.2], [0.04, -0.18]], 0.01);
+};
+const drawAlarm = (p: Pen, U: number) => {
+  const d = mk(p, U);
+  for (const s of [-1, 1]) d.ell(s * 0.1, -0.32, 0.06, 0.05, "#c9a54a");
+  d.line([[-0.08, 0.0], [-0.12, 0.04]], 0.02); d.line([[0.08, 0.0], [0.12, 0.04]], 0.02);
+  d.ell(0, -0.16, 0.15, 0.15, "#d0312d"); d.ell(0, -0.16, 0.11, 0.11, "#fbf7ec", d.ol * 0.5);
+  d.line([[0, -0.16], [0, -0.24]], 0.012); d.line([[0, -0.16], [0.06, -0.14]], 0.012);
+};
+const drawWallClock = (p: Pen, U: number) => {
+  const d = mk(p, U);
+  d.ell(0, -0.34, 0.34, 0.34, "#b03a34"); d.ell(0, -0.34, 0.28, 0.28, "#fbf7ec", d.ol * 0.6);
+  for (let i = 0; i < 12; i++) { const a = rad(i * 30); d.line([[Math.cos(a) * 0.22, -0.34 + Math.sin(a) * 0.22], [Math.cos(a) * 0.25, -0.34 + Math.sin(a) * 0.25]], 0.012); }
+  d.line([[0, -0.34], [0, -0.52]], 0.02); d.line([[0, -0.34], [0.12, -0.3]], 0.024);
+};
+const drawCuffs = (p: Pen, U: number) => {
+  const d = mk(p, U);
+  for (const x of [-0.08, 0.08]) p.arc(x * U, -0.12 * U, 0.07 * U, 0.07 * U, 0, 360, 0.025 * U, "#9aa3ad");
+  d.line([[-0.02, -0.12], [0.02, -0.12]], 0.012, "#5a5f68");
+};
+const drawSlingshot = (p: Pen, U: number, st: PropState) => {
+  const d = mk(p, U), k = st.draw ?? 0, px = -0.06 - 0.55 * k;
+  d.line([[0.14, -0.14], [px, 0], [0.14, 0.14]], 0.014, "#c8302a");
+  d.line([[0.0, 0], [-0.08, 0]], 0.04, "#8a5a34");
+  d.line([[0, 0], [0.14, -0.14]], 0.035, "#8a5a34"); d.line([[0, 0], [0.14, 0.14]], 0.035, "#8a5a34");
+  if (k > 0.05) d.ell(px, 0, 0.035, 0.035, "#7d848e");
+};
+const drawGasTank = (p: Pen, U: number) => {
+  const d = mk(p, U);
+  d.rr(-0.24, -0.26, 0.24, 0.28, 0.14, "#3f9a4a");
+  d.line([[-0.22, 0.0], [0.22, 0.0]], 0.012, "#2f7a3a");
+  d.rr(-0.06, -0.33, 0.06, -0.25, 0.01, "#9aa3ad");
+  p.arc(0, -0.38 * U, 0.08 * U, 0.06 * U, 180, 360, d.ol);
+  d.rr(-0.16, 0.26, 0.16, 0.3, 0.01, "#2f7a3a", d.ol * 0.6);
+};
+const drawJerry = (p: Pen, U: number, st: PropState) => {
+  const d = mk(p, U);
+  d.rr(-0.2, 0.05, 0.2, 0.52, 0.04, "#c8302a");
+  d.line([[-0.14, 0.15], [0.14, 0.42]], 0.016, "#a8201a"); d.line([[0.14, 0.15], [-0.14, 0.42]], 0.016, "#a8201a");
+  p.arc(0, 0.05 * U, 0.08 * U, 0.06 * U, 180, 360, d.ol * 1.4);
+  d.poly([[0.12, 0.06], [0.2, -0.04], [0.24, -0.02], [0.18, 0.08]], "#3d4148", d.ol * 0.6);
+  if (st.flash) { const dn = worldDown(p); d.line([[0.22, -0.03], [0.22 + dn[0] * 0.15 + 0.05, -0.03 + dn[1] * 0.15], [0.22 + dn[0] * 0.75, -0.03 + dn[1] * 0.75]], 0.05, "#f2b632"); }
+};
+const drawSprayer = (p: Pen, U: number, st: PropState) => {
+  const d = mk(p, U);
+  if (st.flash) { d.poly([[0.38, -0.12], [1.0, -0.32], [1.05, 0.08]], "rgba(225,240,245,0.65)", 0); }
+  d.rr(-0.08, -0.32, 0.08, 0.02, 0.03, "#f2c230");
+  d.line([[0.0, -0.32], [0.0, -0.42], [0.1, -0.42]], 0.02, "#3d4148");
+  d.line([[0.08, -0.16], [0.36, -0.12]], 0.02, "#3d4148");
+};
+const drawUmbrella = (p: Pen, U: number, st: PropState) => {
+  const d = mk(p, U), open = st.open ?? 1;
+  p.arc(-0.06 * U, 0, 0.06 * U, 0.06 * U, 0, 180, 0.03 * U, "#5a3a22");
+  d.line([[0, 0], [1.5, 0]], 0.022, "#3d4148");
+  if (open > 0.5) {
+    const pts: P2[] = [];
+    for (let i = 0; i <= 16; i++) { const t = -1 + (2 * i) / 16; pts.push([1.2 + 0.28 * (1 - t * t), 0.72 * t]); }
+    pts.push([1.2, 0.72]);
+    for (let i = 4; i >= -4; i--) pts.push([1.2 + 0.04 * Math.abs(Math.sin(i * 1.57)), (0.72 * i) / 4]);
+    d.poly(pts, "#2f5fa8");
+    for (const t of [-0.5, 0, 0.5]) d.line([[1.2, 0.72 * t], [1.48, 0.72 * t * 0.3]], 0.008, "#1f3a7a");
+  } else d.poly([[0.85, -0.05], [1.5, -0.02], [1.5, 0.02], [0.85, 0.06]], "#2f5fa8");
+};
+const drawRod = (p: Pen, U: number, st: PropState) => {
+  const d = mk(p, U), L = (st.open ?? 0.5) * 1.8;
+  d.line([[0, 0], [2.6, 0]], 0.025, "#8a5a34");
+  d.ell(0.35, 0.05, 0.05, 0.05, "#5d636c");
+  const dn = worldDown(p), tip: P2 = [2.6, 0], end: P2 = [tip[0] + dn[0] * L, tip[1] + dn[1] * L];
+  d.line([tip, end], 0.014, "#3a3a42");
+  d.ell(end[0], end[1], 0.04, 0.05, "#d0312d", d.ol * 0.5);
+};
+const drawRope = (p: Pen, U: number) => { const d = mk(p, U); for (const r of [0.16, 0.12, 0.08]) d.ell(0, -0.16, r, r * 0.75, null, 0.03 * U * 0.6); d.ell(0, -0.16, 0.18, 0.14, null, d.ol); };
+const drawFish = (p: Pen, U: number) => {
+  const d = mk(p, U);
+  d.poly([[-0.07, 0.0], [0.07, 0.0], [0.0, 0.1]], "#5aa8c8");
+  d.ell(0, 0.3, 0.1, 0.22, "#7ac0d8");
+  d.dot(0.03, 0.44, 0.015);
+};
+const drawCase = (p: Pen, U: number) => {
+  const d = mk(p, U);
+  p.arc(0, 0.06 * U, 0.08 * U, 0.06 * U, 180, 360, d.ol * 1.2);
+  d.rr(-0.3, 0.06, 0.3, 0.44, 0.04, "#6b4426");
+  d.line([[-0.3, 0.2], [0.3, 0.2]], 0.01, "#4a2a18");
+  for (const x of [-0.18, 0.18]) d.rr(x - 0.03, 0.17, x + 0.03, 0.23, 0.005, "#c9a54a", d.ol * 0.4);
+};
+const drawCamera = (p: Pen, U: number) => {
+  const d = mk(p, U);
+  d.rr(-0.16, -0.2, 0.16, 0.0, 0.03, "#2b2b30");
+  d.ell(0.0, -0.1, 0.07, 0.07, "#5a6a7a"); d.ell(0.0, -0.1, 0.035, 0.035, "#1a1a1e", 0);
+  d.rr(-0.13, -0.24, -0.06, -0.2, 0.01, "#5a5f68");
+};
+const drawLaptop = (p: Pen, U: number, st: PropState) => {
+  const d = mk(p, U);
+  if ((st.open ?? 1) > 0.5) { d.rr(-0.24, -0.38, 0.24, -0.06, 0.02, "#3d4148"); d.rr(-0.21, -0.35, 0.21, -0.09, 0.01, "#9fd8ff", 0); }
+  d.poly([[-0.28, -0.06], [0.28, -0.06], [0.3, 0.0], [-0.3, 0.0]], "#9aa3ad");
+};
+const drawMoneyBag = (p: Pen, U: number) => {
+  const d = mk(p, U);
+  d.poly([[-0.06, -0.3], [0.06, -0.3], [0.08, -0.24], [0.22, -0.1], [0.2, 0.04], [-0.2, 0.04], [-0.22, -0.1], [-0.08, -0.24]], "#c9a86a");
+  d.line([[-0.08, -0.25], [0.08, -0.25]], 0.014, "#7a5a2a");
+  d.text("Rp", 0, -0.08, 0.1, "#2f6a2a");
+};
+const drawFlashlight = (p: Pen, U: number, st: PropState) => {
+  const d = mk(p, U);
+  if (st.lit) d.poly([[0.5, -0.06], [1.9, -0.36], [1.9, 0.36], [0.5, 0.06]], "rgba(255,244,190,0.55)", 0);
+  d.rr(0, -0.04, 0.38, 0.04, 0.015, "#3d4148");
+  d.poly([[0.36, -0.06], [0.5, -0.08], [0.5, 0.08], [0.36, 0.06]], "#5a5f68", d.ol);
+  if (st.lit) d.rr(0.48, -0.06, 0.52, 0.06, 0.01, "#fff6c8", 0);
+};
+
+// =====================================================================================================================
 // CATALOGUE
 // =====================================================================================================================
 const long = (name: string, label: string, len: number, main: number, off: number | undefined, styles: Record<string, HoldStyle>,
@@ -550,6 +865,50 @@ export const PROPS: Record<string, PropDef> = {
   kardus: { name: "kardus", label: "cardboard box (two hands)", cls: "box", grips: { main: [0.31, 0], off: [-0.31, 0] }, points: { centre: [0, 0] }, bounds: [-0.34, -0.27, 0.34, 0.27], twoHand: true, rest: "stand", styles: BOX_STYLES, defStyle: "carry", draw: drawBox(false) },
   peti: { name: "peti", label: "small wooden crate (two hands)", cls: "box", grips: { main: [0.31, 0], off: [-0.31, 0] }, points: { centre: [0, 0] }, bounds: [-0.34, -0.27, 0.34, 0.27], twoHand: true, rest: "stand", styles: BOX_STYLES, defStyle: "carry", draw: drawBox(true) },
   karung: { name: "karung", label: "sack of rice", cls: "box", grips: { main: [0.28, 0.05], off: [-0.28, 0.05] }, points: { centre: [0, 0] }, bounds: [-0.34, -0.26, 0.32, 0.26], rest: "stand", styles: BOX_STYLES, defStyle: "shoulder", draw: drawSack },
+  // ---- more weapons ----
+  senapan_mesin: long("senapan_mesin", "machine gun / tommy gun (two hands)", 1.32, 0.42, 0.8, MG_STYLES, "hip_fire", drawMG, { muzzle: [1.33, -0.02] }, 0.3, { grips: { main: [0.42, 0.1], off: [0.8, 0.12] } }),
+  keris: long("keris", "keris (wavy Javanese dagger)", 0.78, 0.08, undefined, PARANG_STYLES, "low", drawKeris, { edge: [0.7, 0] }, 0.14, { cls: "blade" }),
+  celurit: long("celurit", "celurit (sickle)", 0.8, 0.12, undefined, PARANG_STYLES, "low", drawCelurit, { edge: [0.5, -0.36] }, 0.42, { cls: "blade" }),
+  pisau: long("pisau", "knife", 0.5, 0.08, undefined, PARANG_STYLES, "low", drawKnife, { edge: [0.48, 0] }, 0.08, { cls: "blade" }),
+  pentungan: long("pentungan", "police baton", 0.75, 0.1, undefined, HAMMER_STYLES, "hold", drawBaton, { face: [0.74, 0] }, 0.08, { cls: "tool" }),
+  gada: long("gada", "wooden club (caveman)", 1.12, 0.12, undefined, HAMMER_STYLES, "hold", drawClub, { face: [1.05, 0.05] }, 0.16, { cls: "tool" }),
+  tulang: long("tulang", "bone", 0.62, 0.3, undefined, HAMMER_STYLES, "hold", drawBone, { face: [0.6, 0] }, 0.12, { cls: "tool" }),
+  ketapel: { name: "ketapel", label: "slingshot", cls: "bow", grips: { main: [0, 0], off: [-0.06, 0] }, points: { pouch: [-0.06, 0], tip: [0.16, 0] },
+    bounds: [-0.68, -0.18, 0.2, 0.18], twoHand: true, rest: "flat", styles: SLING_STYLES, defStyle: "rest", draw: drawSlingshot, offGrip: (st) => [-0.06 - 0.55 * (st.draw ?? 0), 0] },
+  borgol: small("borgol", "handcuffs", drawCuffs, [-0.17, -0.21, 0.17, -0.03]),
+  // ---- explosives (st.lit = burning fuse; throw action + explosion FX) ----
+  bom: small("bom", "round cartoon bomb with a fuse", drawBomb, [-0.2, -0.54, 0.22, 0.04], "stand", THROW_STYLES),
+  dinamit: small("dinamit", "dynamite bundle", drawDynamite, [-0.16, -0.54, 0.16, 0.04], "stand", THROW_STYLES),
+  granat: small("granat", "hand grenade", drawGrenade, [-0.14, -0.36, 0.16, 0.02], "stand", THROW_STYLES),
+  // ---- clocks ----
+  jam_saku: small("jam_saku", "pocket watch", drawPocketWatch, [-0.14, -0.34, 0.14, 0.04]),
+  jam_weker: small("jam_weker", "alarm clock", drawAlarm, [-0.18, -0.4, 0.18, 0.06], "stand"),
+  jam_dinding: small("jam_dinding", "wall clock", drawWallClock, [-0.36, -0.7, 0.36, 0.02], "stand"),
+  // ---- gas ----
+  tabung_gas: { name: "tabung_gas", label: "LPG gas cylinder 3 kg 'melon' (two hands)", cls: "box", grips: { main: [0.25, -0.02], off: [-0.25, -0.02] }, points: { centre: [0, 0], valve: [0, -0.3] },
+    bounds: [-0.26, -0.46, 0.26, 0.32], twoHand: true, rest: "stand", styles: GAS_STYLES, defStyle: "carry", draw: drawGasTank },
+  jerigen: { name: "jerigen", label: "jerrycan (fuel / water; pour action)", cls: "small", grips: { main: [0, 0], off: [-0.15, 0.48] }, points: { spout: [0.22, -0.03] },
+    bounds: [-0.22, -0.1, 0.95, 0.95], rest: "stand", styles: POUR_STYLES, defStyle: "low", draw: drawJerry },
+  semprotan: small("semprotan", "hand sprayer (st.flash = mist)", drawSprayer, [-0.1, -0.46, 1.06, 0.1], "stand", SPRAY_STYLES),
+  // ---- construction tools ----
+  sekop: long("sekop", "shovel (two hands)", 1.56, 0.1, 0.65, SHOVEL_STYLES, "rest", drawShovel, { blade: [1.5, 0] }, 0.16, { cls: "tool" }),
+  gergaji: long("gergaji", "hand saw (saw action)", 1.0, 0.08, undefined, SAW_STYLES, "hold", drawSaw, { edge: [0.6, 0.13] }, 0.18, { cls: "tool" }),
+  bor: { name: "bor", label: "power drill", cls: "pistol", grips: { main: [0, 0.08], off: [0.2, -0.02] }, points: { tip: [0.58, -0.035] }, bounds: [-0.12, -0.14, 0.62, 0.22], rest: "flat", styles: DRILL_STYLES, defStyle: "hold", draw: drawDrill },
+  kunci_inggris: long("kunci_inggris", "wrench", 0.58, 0.1, undefined, HAMMER_STYLES, "hold", drawWrench, { face: [0.56, 0] }, 0.12, { cls: "tool" }),
+  linggis: long("linggis", "crowbar", 1.52, 0.2, 1.0, STICK_STYLES, "carry", drawCrowbar, { face: [1.5, -0.05] }, 0.12, { cls: "tool", twoHand: false }),
+  cetok: small("cetok", "trowel", drawTrowel, [-0.18, -0.44, 0.18, 0.06], "flat", TROWEL_STYLES),
+  meteran: small("meteran", "tape measure (st.open extends the tape)", drawTape, [-0.12, -0.22, 1.2, 0.02]),
+  batu_bata: small("batu_bata", "brick", drawBrick, [-0.16, -0.16, 0.16, 0.04], "stand", THROW_STYLES),
+  // ---- everyday ----
+  payung: long("payung", "umbrella (st.open)", 1.5, 0.15, undefined, UMBRELLA_STYLES, "open", drawUmbrella, {}, 0.75, { cls: "tool" }),
+  pancing: long("pancing", "fishing rod with line + float", 2.6, 0.3, 0.06, ROD_STYLES, "cast", drawRod, { tip: [2.6, 0] }, 1.9, { cls: "tool", twoHand: false }),
+  senter: long("senter", "flashlight (st.lit = beam)", 0.52, 0.18, undefined, LIGHT_STYLES, "point", drawFlashlight, { beam: [0.52, 0] }, 0.4, { cls: "tool", bounds: [-0.1, -0.4, 1.95, 0.4] }),
+  tali: small("tali", "coil of rope", drawRope, [-0.2, -0.32, 0.2, 0.0]),
+  ikan: { ...small("ikan", "fish (held by the tail)", drawFish, [-0.12, -0.02, 0.12, 0.54]), defStyle: "show" },
+  koper: { ...small("koper", "briefcase / suitcase", drawCase, [-0.32, -0.02, 0.32, 0.46], "stand", CASE_STYLES), defStyle: "low" },
+  kamera: small("kamera", "camera", drawCamera, [-0.18, -0.26, 0.18, 0.02], "flat", CAMERA_STYLES),
+  laptop: small("laptop", "laptop (st.open)", drawLaptop, [-0.32, -0.4, 0.32, 0.02], "flat"),
+  kantong_uang: small("kantong_uang", "money bag", drawMoneyBag, [-0.24, -0.32, 0.24, 0.06], "stand"),
 };
 
 export const PROP_NAMES = Object.keys(PROPS);
@@ -560,9 +919,9 @@ export const propDef = (name: string): PropDef => {
 };
 /** grip positions for a style (long props can move the grips along the shaft) */
 export const gripsFor = (d: PropDef, s: HoldStyle, st: PropState): { main: P2; off?: P2 } => {
-  const main: P2 = s.mainAt !== undefined ? [s.mainAt, 0] : d.grips.main;
-  let off: P2 | undefined = s.offAt !== undefined ? [s.offAt, 0] : d.grips.off;
-  if (d.offGrip) off = d.offGrip(st);
+  const main: P2 = s.mainGrip ?? (s.mainAt !== undefined ? [s.mainAt, 0] : d.grips.main);
+  let off: P2 | undefined = s.offGrip ?? (s.offAt !== undefined ? [s.offAt, 0] : d.grips.off);
+  if (d.offGrip && !s.offGrip) off = d.offGrip(st);
   return { main, off };
 };
 /** local point of a pin name */

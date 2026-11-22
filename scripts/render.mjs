@@ -3,11 +3,11 @@
 //   node scripts/render.mjs --comp <Id[,Id2]> --mode stills   --frames 30,120,300-305|all --out out/<name>/stills/ [--scale 0.5]
 //   node scripts/render.mjs --comp <Id>        --mode previews --clips 0-104,300-404      --out out/<name>/previews/ [--scale 0.5] [--force]
 //   node scripts/render.mjs --comp <Id>        --mode video                               --out out/<name>/video.mp4 [--scale 1.3333]
-//   options: --props '{"post":{"lens":false}}'  (input props JSON)   --quality 92   --concurrency 2
+//   options: --props '{"post":{"lens":false}}'  (input props JSON)   --quality 92   --concurrency 2   --keep-bundle
 //
 // Windows render environment (same as the old scripts): Chrome at C:/Program Files/Google/Chrome/Application/chrome.exe,
-// gl "angle", TEMP forced to D:/remotion-tmp (override with REMOTION_TMP). Every bundle copies public/ into TEMP:
-// delete old remotion-webpack-bundle-* folders there when a project is finished (ask the user first).
+// gl "angle", TEMP forced to D:/remotion-tmp (override with REMOTION_TMP). Every bundle copies public/ into TEMP;
+// this script deletes its own bundle when it finishes (pass --keep-bundle to keep it).
 import fs from "node:fs";
 import path from "node:path";
 import { bundle } from "@remotion/bundler";
@@ -81,4 +81,6 @@ for (const id of comps) {
     console.log(`\n  ${file}  (${((Date.now() - t) / 1000).toFixed(0)} s)`);
   } else { console.error(`unknown --mode ${mode}`); process.exit(2); }
 }
+// every bundle copies public/ into TEMP and Remotion never deletes it (it filled the disk before): remove ours
+if (!flag("keep-bundle")) { try { fs.rmSync(serveUrl, { recursive: true, force: true }); } catch { /* ignore */ } }
 console.log(`Done in ${((Date.now() - t0) / 1000).toFixed(0)} s`);

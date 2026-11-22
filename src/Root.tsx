@@ -22,15 +22,25 @@ import {
 } from "./videos/seandainya/Bridge";
 import { SeandainyaCaptionOverlay } from "./videos/seandainya/SeandainyaCaptionOverlay";
 import { SeandainyaCaptionsOnly } from "./videos/seandainya/CaptionsOnly";
-import { PoseGallery, PropGallery, POSE_PAGES, PROP_PAGES } from "./kit/gallery/Galleries";
+import { CastGallery, PoseGallery, PropGallery, CAST_PAGES, POSE_PAGES, PROP_PAGES } from "./kit/gallery/Galleries";
+import { kitCompositions } from "./kit/Short";
+import { PROJECT as KITTEST } from "./videos/kittest/project";
+import { LOCATIONS_PROJECT } from "./kit/gallery/locationsProject";
+import { VEHICLES_PROJECT } from "./kit/gallery/vehiclesProject";
+import { PROJECT as KITACTIONS } from "./videos/kitactions/project";
 
 export const Root: React.FC = () => {
   return (
     <>
       <Folder name="Kit">
+        <Composition id="KitCastGallery" component={CastGallery} durationInFrames={CAST_PAGES} fps={30} width={1080} height={1920} />
         <Composition id="KitPoseGallery" component={PoseGallery} durationInFrames={POSE_PAGES} fps={30} width={1080} height={1920} />
         <Composition id="KitPropGallery" component={PropGallery} durationInFrames={PROP_PAGES} fps={30} width={1080} height={1920} />
       </Folder>
+      {kitCompositions("KitTest", KITTEST)}
+      {kitCompositions("KitLocations", LOCATIONS_PROJECT)}
+      {kitCompositions("KitVehicles", VEHICLES_PROJECT)}
+      {kitCompositions("KitActions", KITACTIONS)}
       <Folder name="Seandainya">
         <Composition
           id="SeandainyaShort"

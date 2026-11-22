@@ -71,11 +71,11 @@ float uu = clamp( ( vMapUv.x - ucx ) / max( hw, 1e-3 ), -1.0, 1.0 ) * sign( dFdx
 #if NUM_POINT_LIGHTS > 0
 {
   // practical lights: a card has no useful normal, so use the distance attenuation and a soft left/right term
-  IncidentLight ptL; vec3 ptSum = vec3( 0.0 );
+  IncidentLight ptL; vec3 ptSum = vec3( 0.0 ); float sideP = 1.0;
   #pragma unroll_loop_start
   for ( int i = 0; i < NUM_POINT_LIGHTS; i ++ ) {
     getPointLightInfo( pointLights[ i ], geometryPosition, ptL );
-    float sideP = 0.75 + 0.25 * clamp( uu * sign( ptL.direction.x ) * smoothstep( 0.0, 0.3, abs( ptL.direction.x ) ), -1.0, 1.0 );
+    sideP = 0.75 + 0.25 * clamp( uu * sign( ptL.direction.x ) * smoothstep( 0.0, 0.3, abs( ptL.direction.x ) ), -1.0, 1.0 );
     ptSum += ptL.color * sideP;
   }
   #pragma unroll_loop_end

@@ -15,6 +15,7 @@ export const BUILD: Record<Build, { a: number; torso: number; legs: number; tw: 
   stout: { a: 118, torso: 1.15, legs: 1.32, tw: 0.92 },
   kid: { a: 112, torso: 0.85, legs: 1.0, tw: 0.72 },
   slim: { a: 114, torso: 1.12, legs: 1.45, tw: 0.7 },
+  big: { a: 124, torso: 1.22, legs: 1.25, tw: 1.06 },
 };
 /** arm length in HH (shoulder to hand dot) */
 export const ARM = 0.98;
@@ -198,7 +199,7 @@ export const solve = (inp: SolveIn): Joints => {
   const leanR = rad(lean);
   const R = (p: P2) => rotP(p, leanR, pivot), Rinv = (p: P2) => rotP(p, -leanR, pivot);
   const torsoBot = hipY + 0.12 * HH, chin = torsoBot - Bd.torso * HH;
-  const Ta = side ? (o.build === "stout" ? 0.36 : 0.31) * W : ((Bd.tw / 2) * W) / 1.06;
+  const Ta = side ? (o.build === "big" ? 0.42 : o.build === "stout" ? 0.36 : 0.31) * W : ((Bd.tw / 2) * W) / 1.06;
   const tcx = side ? hipX + 2 * u : hipX + 3 * u * facingC;
   const sh = (s: number): P2 => side ? [tcx + 0.05 * Ta + (s < 0 ? -3 * u : 0), chin + 0.14 * HH] : [tcx + s * 0.85 * Ta, chin + 0.12 * HH];
   const headDy = (pose.headDy ?? 0) * HH;
@@ -218,6 +219,7 @@ export const solve = (inp: SolveIn): Joints => {
 
   // ---- props ----
   const placed: Placed[] = [];
+  let placedFromBlend: Affine | null = null;
   for (const { h, def, style, st } of holds) {
     const pinL = pinPoint(def, style, st), g = gripsFor(def, style, st);
     const upper = UPPER.includes(style.at);
@@ -230,18 +232,41 @@ export const solve = (inp: SolveIn): Joints => {
       const off = applyAff(m0, [localPin[0] * PU, localPin[1] * PU]);
       return frameAff([pin[0] - off[0], pin[1] - off[1]], a, flip, 1);
     };
-    let aff = affAt(pinC, pinL, ang);
+    if (h.blendFrom && h.blendFrom.k < 1 && def.styles[h.blendFrom.style]) {
+      // swing between two styles: interpolate the MAIN grip position and the angle (shortest way round)
+      const s0 = def.styles[h.blendFrom.style], k = clamp(h.blendFrom.k, 0, 1);
+      const up0 = UPPER.includes(s0.at), ang0 = rad(s0.angle + (up0 ? lean : 0));
+      const pin0: P2 = [anchorCanon(s0.at)[0] + s0.pos[0] * HH, anchorCanon(s0.at)[1] + s0.pos[1] * HH];
+      const a0 = affAt(pin0, pinPoint(def, s0, st), ang0), a1 = affAt(pinC, pinL, ang);
+      const g0 = gripsFor(def, s0, st).main, g1 = gripsFor(def, style, st).main;
+      const m0 = applyAff(a0, [g0[0] * PU, g0[1] * PU]), m1 = applyAff(a1, [g1[0] * PU, g1[1] * PU]);
+      ang = ang0 + angDiff(ang0, ang) * k;
+      const gm = lerp2(m0, m1, k), gl = lerp2(g0, g1, k);
+      pinC = gm; void pinC;
+      const tmp = affAt(gm, gl, ang);
+      placedFromBlend = tmp;
+    }
+    let aff = placedFromBlend ?? affAt(pinC, pinL, ang);
+    placedFromBlend = null;
     const toC = (m: Affine, lp: P2) => applyAff(m, [lp[0] * PU, lp[1] * PU]);
     if (h.target) {
       // strike: keep the style feel but put the striking point ON the target (canonical)
-      const tgt: P2 = mirror ? [600 - h.target[0], h.target[1]] : h.target;
+      // a target out of reach is pulled toward the shoulder until the grip can be held (the swing stops short)
+      const tgt0: P2 = mirror ? [600 - h.target[0], h.target[1]] : h.target;
       const sp = strikePoint(def), armS = R(sh(style.main === "B" ? -1 : 1));
-      let best: Affine = aff, bestCost = Infinity;
-      for (let da = -50; da <= 50; da += 5) {
-        const a2 = ang + rad(da), m = affAt(tgt, sp, a2), mainC = toC(m, g.main);
-        const over = Math.max(0, dist2(mainC, armS) - ARM * HH * 0.95);
-        const cost = over * 4 + Math.abs(da) * 0.6;
-        if (cost < bestCost) { bestCost = cost; best = m; }
+      let best: Affine = aff;
+      for (let sc = 1; sc >= 0.35; sc -= 0.08) {
+        const tgt: P2 = [armS[0] + (tgt0[0] - armS[0]) * sc, armS[1] + (tgt0[1] - armS[1]) * sc];
+        let bestOver = Infinity, bestCost = Infinity, cand: Affine = aff;
+        for (let da = -50; da <= 50; da += 5) {
+          const a2 = ang + rad(da), m = affAt(tgt, sp, a2), mainC = toC(m, g.main);
+          const over = Math.max(0, dist2(mainC, armS) - ARM * HH * 0.95);
+          const cost = over * 4 + Math.abs(da) * 0.6;
+          if (cost < bestCost) { bestCost = cost; cand = m; bestOver = over; }
+        }
+        best = cand;
+        if (bestOver < 0.05 * HH) break;
+        if (sc < 0.4) warnings.push(`${def.name}: strike target out of reach (${Math.round(dist2(tgt0, armS) / HH * 10) / 10} HH from the shoulder): move the actor closer`);
       }
       aff = best;
     }
