@@ -1,0 +1,1418 @@
+[
+  {
+    "language_code": "ind",
+    "text": "Dan Jepang membalas dengan cara yang sangat brutal. Kenpeitai... polisi rahasia militer... menjalankan pembalasan beruntun. Satu tentara Jepang terluka... sepuluh warga bisa dibawa dan tidak kembali. Kamp interniran dan penjara bawah tanah penuh. Presedennya sudah ada... seperti peristiwa Mandor di Kalimantan tahun 1944. Ini bukan menakut-nakuti... ini pola yang benar-benar terjadi selama pendudukan. Tapi perang rakyat punya satu kekuatan yang tidak bisa diselesaikan dengan eksekusi: dia tidak punya satu markas untuk dihancurkan. Maka Jepang terjebak. Ratusan ribu tentara harus dipecah... menjaga rel, jalan, pabrik, pelabuhan, dan desa. Pasukan yang tadinya disiapkan untuk perang melawan Amerika... kini habis-habisan dijebak oleh perang di dalam negerinya sendiri. Dan blokade terus memotong logistik dari Tokyo. Minyak tipis. Amunisi terhitung. Pangan menipis. Gudang kosong. Kapal tidak datang. Bensin dicampur alkohol. Dan ingat ini: setiap tentara yang dikirim menjaga desa... adalah satu tentara yang hilang dari garis depan melawan Amerika. Lalu dunia ikut bergerak. Amerika dan Sekutu, yang sedang menekan Jepang di timur, akhirnya melirik Asia Tenggara yang tidak pernah benar-benar tunduk. Pasukan Sekutu mulai mendarat... dan setiap pelabuhan yang direbut Sekutu... adalah satu pelabuhan lagi yang kehilangan logistik dari Tokyo. Perang rakyat, perang gerilya, dan perang dunia... mulai menyatu jadi satu medan. Di dunia nyata, melawan Belanda saja butuh empat setengah tahun. Seandainya lawannya Jepang... perangnya lebih brutal, dan lebih panjang. Tapi arah perang jelas: Jepang tidak bisa menang perang panjang di negeri orang... dengan logistik yang dipotong dari laut.",
+    "words": [
+      {
+        "text": "Dan",
+        "start": 0.0,
+        "end": 0.24,
+        "type": "word"
+      },
+      {
+        "text": "Jepang",
+        "start": 0.28,
+        "end": 0.64,
+        "type": "word"
+      },
+      {
+        "text": "membalas",
+        "start": 0.68,
+        "end": 1.12,
+        "type": "word"
+      },
+      {
+        "text": "dengan",
+        "start": 1.16,
+        "end": 1.36,
+        "type": "word"
+      },
+      {
+        "text": "cara",
+        "start": 1.44,
+        "end": 1.68,
+        "type": "word"
+      },
+      {
+        "text": "yang",
+        "start": 1.76,
+        "end": 1.92,
+        "type": "word"
+      },
+      {
+        "text": "sangat",
+        "start": 2.08,
+        "end": 2.48,
+        "type": "word"
+      },
+      {
+        "text": "brutal.",
+        "start": 2.52,
+        "end": 3.24,
+        "type": "word"
+      },
+      {
+        "text": "Kenpeitai...",
+        "start": 3.52,
+        "end": 4.64,
+        "type": "word"
+      },
+      {
+        "text": "polisi",
+        "start": 4.72,
+        "end": 5.04,
+        "type": "word"
+      },
+      {
+        "text": "rahasia",
+        "start": 5.12,
+        "end": 5.44,
+        "type": "word"
+      },
+      {
+        "text": "militer...",
+        "start": 5.52,
+        "end": 6.4,
+        "type": "word"
+      },
+      {
+        "text": "menjalankan",
+        "start": 6.48,
+        "end": 7.04,
+        "type": "word"
+      },
+      {
+        "text": "pembalasan",
+        "start": 7.08,
+        "end": 7.6,
+        "type": "word"
+      },
+      {
+        "text": "beruntun.",
+        "start": 7.68,
+        "end": 8.16,
+        "type": "word"
+      },
+      {
+        "text": "Satu",
+        "start": 8.64,
+        "end": 8.92,
+        "type": "word"
+      },
+      {
+        "text": "tentara",
+        "start": 8.96,
+        "end": 9.28,
+        "type": "word"
+      },
+      {
+        "text": "Jepang",
+        "start": 9.36,
+        "end": 9.68,
+        "type": "word"
+      },
+      {
+        "text": "terluka...",
+        "start": 9.8,
+        "end": 10.72,
+        "type": "word"
+      },
+      {
+        "text": "sepuluh",
+        "start": 10.84,
+        "end": 11.08,
+        "type": "word"
+      },
+      {
+        "text": "warga",
+        "start": 11.12,
+        "end": 11.52,
+        "type": "word"
+      },
+      {
+        "text": "bisa",
+        "start": 11.6,
+        "end": 11.84,
+        "type": "word"
+      },
+      {
+        "text": "dibawa",
+        "start": 11.88,
+        "end": 12.32,
+        "type": "word"
+      },
+      {
+        "text": "dan",
+        "start": 12.4,
+        "end": 12.56,
+        "type": "word"
+      },
+      {
+        "text": "tidak",
+        "start": 12.64,
+        "end": 12.88,
+        "type": "word"
+      },
+      {
+        "text": "kembali.",
+        "start": 12.96,
+        "end": 13.44,
+        "type": "word"
+      },
+      {
+        "text": "Kamp",
+        "start": 13.84,
+        "end": 14.08,
+        "type": "word"
+      },
+      {
+        "text": "interniran",
+        "start": 14.16,
+        "end": 14.72,
+        "type": "word"
+      },
+      {
+        "text": "dan",
+        "start": 14.8,
+        "end": 14.88,
+        "type": "word"
+      },
+      {
+        "text": "penjara",
+        "start": 14.96,
+        "end": 15.28,
+        "type": "word"
+      },
+      {
+        "text": "bawah",
+        "start": 15.36,
+        "end": 15.6,
+        "type": "word"
+      },
+      {
+        "text": "tanah",
+        "start": 15.68,
+        "end": 15.92,
+        "type": "word"
+      },
+      {
+        "text": "penuh.",
+        "start": 16.08,
+        "end": 16.48,
+        "type": "word"
+      },
+      {
+        "text": "Presedennya",
+        "start": 16.88,
+        "end": 17.52,
+        "type": "word"
+      },
+      {
+        "text": "sudah",
+        "start": 17.56,
+        "end": 17.76,
+        "type": "word"
+      },
+      {
+        "text": "ada...",
+        "start": 17.84,
+        "end": 18.48,
+        "type": "word"
+      },
+      {
+        "text": "seperti",
+        "start": 18.56,
+        "end": 18.8,
+        "type": "word"
+      },
+      {
+        "text": "peristiwa",
+        "start": 18.88,
+        "end": 19.28,
+        "type": "word"
+      },
+      {
+        "text": "Mandor",
+        "start": 19.32,
+        "end": 19.68,
+        "type": "word"
+      },
+      {
+        "text": "di",
+        "start": 19.72,
+        "end": 19.76,
+        "type": "word"
+      },
+      {
+        "text": "Kalimantan",
+        "start": 19.84,
+        "end": 20.4,
+        "type": "word"
+      },
+      {
+        "text": "tahun",
+        "start": 20.48,
+        "end": 20.8,
+        "type": "word"
+      },
+      {
+        "text": "1944.",
+        "start": 20.88,
+        "end": 23.04,
+        "type": "word"
+      },
+      {
+        "text": "Ini",
+        "start": 23.16,
+        "end": 23.28,
+        "type": "word"
+      },
+      {
+        "text": "bukan",
+        "start": 23.32,
+        "end": 23.52,
+        "type": "word"
+      },
+      {
+        "text": "menakut-nakuti...",
+        "start": 23.6,
+        "end": 24.88,
+        "type": "word"
+      },
+      {
+        "text": "ini",
+        "start": 25.0,
+        "end": 25.12,
+        "type": "word"
+      },
+      {
+        "text": "pola",
+        "start": 25.2,
+        "end": 25.52,
+        "type": "word"
+      },
+      {
+        "text": "yang",
+        "start": 25.6,
+        "end": 25.68,
+        "type": "word"
+      },
+      {
+        "text": "benar-benar",
+        "start": 25.76,
+        "end": 26.32,
+        "type": "word"
+      },
+      {
+        "text": "terjadi",
+        "start": 26.4,
+        "end": 26.88,
+        "type": "word"
+      },
+      {
+        "text": "selama",
+        "start": 26.96,
+        "end": 27.2,
+        "type": "word"
+      },
+      {
+        "text": "pendudukan.",
+        "start": 27.28,
+        "end": 27.84,
+        "type": "word"
+      },
+      {
+        "text": "Tapi",
+        "start": 28.32,
+        "end": 28.64,
+        "type": "word"
+      },
+      {
+        "text": "perang",
+        "start": 28.72,
+        "end": 28.96,
+        "type": "word"
+      },
+      {
+        "text": "rakyat",
+        "start": 29.0,
+        "end": 29.36,
+        "type": "word"
+      },
+      {
+        "text": "punya",
+        "start": 29.44,
+        "end": 29.6,
+        "type": "word"
+      },
+      {
+        "text": "satu",
+        "start": 29.68,
+        "end": 29.92,
+        "type": "word"
+      },
+      {
+        "text": "kekuatan",
+        "start": 30.0,
+        "end": 30.56,
+        "type": "word"
+      },
+      {
+        "text": "yang",
+        "start": 30.68,
+        "end": 30.8,
+        "type": "word"
+      },
+      {
+        "text": "tidak",
+        "start": 30.92,
+        "end": 31.12,
+        "type": "word"
+      },
+      {
+        "text": "bisa",
+        "start": 31.16,
+        "end": 31.36,
+        "type": "word"
+      },
+      {
+        "text": "diselesaikan",
+        "start": 31.44,
+        "end": 32.08,
+        "type": "word"
+      },
+      {
+        "text": "dengan",
+        "start": 32.16,
+        "end": 32.32,
+        "type": "word"
+      },
+      {
+        "text": "eksekusi:",
+        "start": 32.4,
+        "end": 33.44,
+        "type": "word"
+      },
+      {
+        "text": "dia",
+        "start": 33.52,
+        "end": 33.76,
+        "type": "word"
+      },
+      {
+        "text": "tidak",
+        "start": 33.84,
+        "end": 34.08,
+        "type": "word"
+      },
+      {
+        "text": "punya",
+        "start": 34.16,
+        "end": 34.48,
+        "type": "word"
+      },
+      {
+        "text": "satu",
+        "start": 34.52,
+        "end": 34.8,
+        "type": "word"
+      },
+      {
+        "text": "markas",
+        "start": 34.88,
+        "end": 35.28,
+        "type": "word"
+      },
+      {
+        "text": "untuk",
+        "start": 35.36,
+        "end": 35.52,
+        "type": "word"
+      },
+      {
+        "text": "dihancurkan.",
+        "start": 35.6,
+        "end": 36.72,
+        "type": "word"
+      },
+      {
+        "text": "Maka",
+        "start": 36.76,
+        "end": 37.12,
+        "type": "word"
+      },
+      {
+        "text": "Jepang",
+        "start": 37.36,
+        "end": 37.76,
+        "type": "word"
+      },
+      {
+        "text": "terjebak.",
+        "start": 37.84,
+        "end": 38.8,
+        "type": "word"
+      },
+      {
+        "text": "Ratusan",
+        "start": 38.88,
+        "end": 39.28,
+        "type": "word"
+      },
+      {
+        "text": "ribu",
+        "start": 39.36,
+        "end": 39.56,
+        "type": "word"
+      },
+      {
+        "text": "tentara",
+        "start": 39.6,
+        "end": 40.08,
+        "type": "word"
+      },
+      {
+        "text": "harus",
+        "start": 40.16,
+        "end": 40.48,
+        "type": "word"
+      },
+      {
+        "text": "dipecah...",
+        "start": 40.52,
+        "end": 41.28,
+        "type": "word"
+      },
+      {
+        "text": "menjaga",
+        "start": 41.36,
+        "end": 41.76,
+        "type": "word"
+      },
+      {
+        "text": "rel,",
+        "start": 41.92,
+        "end": 42.4,
+        "type": "word"
+      },
+      {
+        "text": "jalan,",
+        "start": 42.48,
+        "end": 43.2,
+        "type": "word"
+      },
+      {
+        "text": "pabrik,",
+        "start": 43.24,
+        "end": 43.84,
+        "type": "word"
+      },
+      {
+        "text": "pelabuhan,",
+        "start": 43.92,
+        "end": 44.64,
+        "type": "word"
+      },
+      {
+        "text": "dan",
+        "start": 44.72,
+        "end": 44.8,
+        "type": "word"
+      },
+      {
+        "text": "desa.",
+        "start": 44.92,
+        "end": 45.6,
+        "type": "word"
+      },
+      {
+        "text": "Pasukan",
+        "start": 45.72,
+        "end": 46.08,
+        "type": "word"
+      },
+      {
+        "text": "yang",
+        "start": 46.16,
+        "end": 46.24,
+        "type": "word"
+      },
+      {
+        "text": "tadinya",
+        "start": 46.28,
+        "end": 46.56,
+        "type": "word"
+      },
+      {
+        "text": "disiapkan",
+        "start": 46.68,
+        "end": 47.12,
+        "type": "word"
+      },
+      {
+        "text": "untuk",
+        "start": 47.2,
+        "end": 47.44,
+        "type": "word"
+      },
+      {
+        "text": "perang",
+        "start": 47.52,
+        "end": 47.68,
+        "type": "word"
+      },
+      {
+        "text": "melawan",
+        "start": 47.76,
+        "end": 48.0,
+        "type": "word"
+      },
+      {
+        "text": "Amerika...",
+        "start": 48.08,
+        "end": 49.04,
+        "type": "word"
+      },
+      {
+        "text": "kini",
+        "start": 49.12,
+        "end": 49.36,
+        "type": "word"
+      },
+      {
+        "text": "habis-habisan",
+        "start": 49.48,
+        "end": 50.16,
+        "type": "word"
+      },
+      {
+        "text": "dijebak",
+        "start": 50.2,
+        "end": 50.72,
+        "type": "word"
+      },
+      {
+        "text": "oleh",
+        "start": 50.8,
+        "end": 51.0,
+        "type": "word"
+      },
+      {
+        "text": "perang",
+        "start": 51.04,
+        "end": 51.28,
+        "type": "word"
+      },
+      {
+        "text": "di",
+        "start": 51.36,
+        "end": 51.44,
+        "type": "word"
+      },
+      {
+        "text": "dalam",
+        "start": 51.48,
+        "end": 51.68,
+        "type": "word"
+      },
+      {
+        "text": "negerinya",
+        "start": 51.76,
+        "end": 52.08,
+        "type": "word"
+      },
+      {
+        "text": "sendiri.",
+        "start": 52.2,
+        "end": 52.96,
+        "type": "word"
+      },
+      {
+        "text": "Dan",
+        "start": 53.04,
+        "end": 53.2,
+        "type": "word"
+      },
+      {
+        "text": "blokade",
+        "start": 53.28,
+        "end": 53.84,
+        "type": "word"
+      },
+      {
+        "text": "terus",
+        "start": 54.0,
+        "end": 54.32,
+        "type": "word"
+      },
+      {
+        "text": "memotong",
+        "start": 54.4,
+        "end": 54.8,
+        "type": "word"
+      },
+      {
+        "text": "logistik",
+        "start": 54.88,
+        "end": 55.28,
+        "type": "word"
+      },
+      {
+        "text": "dari",
+        "start": 55.32,
+        "end": 55.52,
+        "type": "word"
+      },
+      {
+        "text": "Tokyo.",
+        "start": 55.6,
+        "end": 56.0,
+        "type": "word"
+      },
+      {
+        "text": "Minyak",
+        "start": 56.4,
+        "end": 56.72,
+        "type": "word"
+      },
+      {
+        "text": "tipis.",
+        "start": 56.8,
+        "end": 57.52,
+        "type": "word"
+      },
+      {
+        "text": "Amunisi",
+        "start": 57.68,
+        "end": 58.24,
+        "type": "word"
+      },
+      {
+        "text": "terhitung.",
+        "start": 58.36,
+        "end": 59.04,
+        "type": "word"
+      },
+      {
+        "text": "Pangan",
+        "start": 59.2,
+        "end": 59.6,
+        "type": "word"
+      },
+      {
+        "text": "menipis.",
+        "start": 59.68,
+        "end": 60.48,
+        "type": "word"
+      },
+      {
+        "text": "Gudang",
+        "start": 60.64,
+        "end": 61.04,
+        "type": "word"
+      },
+      {
+        "text": "kosong.",
+        "start": 61.12,
+        "end": 61.68,
+        "type": "word"
+      },
+      {
+        "text": "Kapal",
+        "start": 61.92,
+        "end": 62.32,
+        "type": "word"
+      },
+      {
+        "text": "tidak",
+        "start": 62.4,
+        "end": 62.56,
+        "type": "word"
+      },
+      {
+        "text": "datang.",
+        "start": 62.64,
+        "end": 63.12,
+        "type": "word"
+      },
+      {
+        "text": "Bensin",
+        "start": 63.36,
+        "end": 63.84,
+        "type": "word"
+      },
+      {
+        "text": "dicampur",
+        "start": 63.96,
+        "end": 64.32,
+        "type": "word"
+      },
+      {
+        "text": "alkohol.",
+        "start": 64.4,
+        "end": 65.16,
+        "type": "word"
+      },
+      {
+        "text": "Dan",
+        "start": 65.36,
+        "end": 65.52,
+        "type": "word"
+      },
+      {
+        "text": "ingat",
+        "start": 65.6,
+        "end": 65.84,
+        "type": "word"
+      },
+      {
+        "text": "ini:",
+        "start": 65.92,
+        "end": 66.36,
+        "type": "word"
+      },
+      {
+        "text": "setiap",
+        "start": 66.56,
+        "end": 67.04,
+        "type": "word"
+      },
+      {
+        "text": "tentara",
+        "start": 67.12,
+        "end": 67.44,
+        "type": "word"
+      },
+      {
+        "text": "yang",
+        "start": 67.52,
+        "end": 67.6,
+        "type": "word"
+      },
+      {
+        "text": "dikirim",
+        "start": 67.64,
+        "end": 68.0,
+        "type": "word"
+      },
+      {
+        "text": "menjaga",
+        "start": 68.08,
+        "end": 68.4,
+        "type": "word"
+      },
+      {
+        "text": "desa...",
+        "start": 68.52,
+        "end": 69.2,
+        "type": "word"
+      },
+      {
+        "text": "adalah",
+        "start": 69.28,
+        "end": 69.6,
+        "type": "word"
+      },
+      {
+        "text": "satu",
+        "start": 69.68,
+        "end": 69.92,
+        "type": "word"
+      },
+      {
+        "text": "tentara",
+        "start": 70.0,
+        "end": 70.4,
+        "type": "word"
+      },
+      {
+        "text": "yang",
+        "start": 70.48,
+        "end": 70.64,
+        "type": "word"
+      },
+      {
+        "text": "hilang",
+        "start": 70.76,
+        "end": 71.04,
+        "type": "word"
+      },
+      {
+        "text": "dari",
+        "start": 71.08,
+        "end": 71.2,
+        "type": "word"
+      },
+      {
+        "text": "garis",
+        "start": 71.28,
+        "end": 71.52,
+        "type": "word"
+      },
+      {
+        "text": "depan",
+        "start": 71.6,
+        "end": 71.84,
+        "type": "word"
+      },
+      {
+        "text": "melawan",
+        "start": 71.92,
+        "end": 72.24,
+        "type": "word"
+      },
+      {
+        "text": "Amerika.",
+        "start": 72.32,
+        "end": 73.08,
+        "type": "word"
+      },
+      {
+        "text": "Lalu",
+        "start": 73.36,
+        "end": 73.68,
+        "type": "word"
+      },
+      {
+        "text": "dunia",
+        "start": 73.76,
+        "end": 74.16,
+        "type": "word"
+      },
+      {
+        "text": "ikut",
+        "start": 74.24,
+        "end": 74.48,
+        "type": "word"
+      },
+      {
+        "text": "bergerak.",
+        "start": 74.64,
+        "end": 75.04,
+        "type": "word"
+      },
+      {
+        "text": "Amerika",
+        "start": 75.36,
+        "end": 75.84,
+        "type": "word"
+      },
+      {
+        "text": "dan",
+        "start": 75.92,
+        "end": 76.0,
+        "type": "word"
+      },
+      {
+        "text": "Sekutu,",
+        "start": 76.04,
+        "end": 76.72,
+        "type": "word"
+      },
+      {
+        "text": "yang",
+        "start": 76.8,
+        "end": 76.88,
+        "type": "word"
+      },
+      {
+        "text": "sedang",
+        "start": 76.96,
+        "end": 77.12,
+        "type": "word"
+      },
+      {
+        "text": "menekan",
+        "start": 77.2,
+        "end": 77.52,
+        "type": "word"
+      },
+      {
+        "text": "Jepang",
+        "start": 77.56,
+        "end": 77.84,
+        "type": "word"
+      },
+      {
+        "text": "di",
+        "start": 77.92,
+        "end": 78.0,
+        "type": "word"
+      },
+      {
+        "text": "timur,",
+        "start": 78.12,
+        "end": 78.72,
+        "type": "word"
+      },
+      {
+        "text": "akhirnya",
+        "start": 78.8,
+        "end": 79.2,
+        "type": "word"
+      },
+      {
+        "text": "melirik",
+        "start": 79.28,
+        "end": 79.6,
+        "type": "word"
+      },
+      {
+        "text": "Asia",
+        "start": 79.68,
+        "end": 79.92,
+        "type": "word"
+      },
+      {
+        "text": "Tenggara",
+        "start": 79.96,
+        "end": 80.4,
+        "type": "word"
+      },
+      {
+        "text": "yang",
+        "start": 80.48,
+        "end": 80.64,
+        "type": "word"
+      },
+      {
+        "text": "tidak",
+        "start": 80.72,
+        "end": 81.04,
+        "type": "word"
+      },
+      {
+        "text": "pernah",
+        "start": 81.12,
+        "end": 81.36,
+        "type": "word"
+      },
+      {
+        "text": "benar-benar",
+        "start": 81.44,
+        "end": 81.84,
+        "type": "word"
+      },
+      {
+        "text": "tunduk.",
+        "start": 81.92,
+        "end": 82.4,
+        "type": "word"
+      },
+      {
+        "text": "Pasukan",
+        "start": 82.72,
+        "end": 83.12,
+        "type": "word"
+      },
+      {
+        "text": "Sekutu",
+        "start": 83.17,
+        "end": 83.52,
+        "type": "word"
+      },
+      {
+        "text": "mulai",
+        "start": 83.6,
+        "end": 83.84,
+        "type": "word"
+      },
+      {
+        "text": "mendarat...",
+        "start": 83.95,
+        "end": 84.64,
+        "type": "word"
+      },
+      {
+        "text": "dan",
+        "start": 84.72,
+        "end": 84.8,
+        "type": "word"
+      },
+      {
+        "text": "setiap",
+        "start": 84.88,
+        "end": 85.28,
+        "type": "word"
+      },
+      {
+        "text": "pelabuhan",
+        "start": 85.36,
+        "end": 85.76,
+        "type": "word"
+      },
+      {
+        "text": "yang",
+        "start": 85.84,
+        "end": 85.92,
+        "type": "word"
+      },
+      {
+        "text": "direbut",
+        "start": 86.04,
+        "end": 86.24,
+        "type": "word"
+      },
+      {
+        "text": "Sekutu...",
+        "start": 86.32,
+        "end": 87.12,
+        "type": "word"
+      },
+      {
+        "text": "adalah",
+        "start": 87.2,
+        "end": 87.52,
+        "type": "word"
+      },
+      {
+        "text": "satu",
+        "start": 87.6,
+        "end": 87.84,
+        "type": "word"
+      },
+      {
+        "text": "pelabuhan",
+        "start": 87.92,
+        "end": 88.32,
+        "type": "word"
+      },
+      {
+        "text": "lagi",
+        "start": 88.4,
+        "end": 88.72,
+        "type": "word"
+      },
+      {
+        "text": "yang",
+        "start": 88.8,
+        "end": 88.88,
+        "type": "word"
+      },
+      {
+        "text": "kehilangan",
+        "start": 88.96,
+        "end": 89.36,
+        "type": "word"
+      },
+      {
+        "text": "logistik",
+        "start": 89.44,
+        "end": 89.84,
+        "type": "word"
+      },
+      {
+        "text": "dari",
+        "start": 89.92,
+        "end": 90.08,
+        "type": "word"
+      },
+      {
+        "text": "Tokyo.",
+        "start": 90.16,
+        "end": 90.56,
+        "type": "word"
+      },
+      {
+        "text": "Perang",
+        "start": 90.96,
+        "end": 91.2,
+        "type": "word"
+      },
+      {
+        "text": "rakyat,",
+        "start": 91.28,
+        "end": 92.0,
+        "type": "word"
+      },
+      {
+        "text": "perang",
+        "start": 92.08,
+        "end": 92.24,
+        "type": "word"
+      },
+      {
+        "text": "gerilya,",
+        "start": 92.32,
+        "end": 93.04,
+        "type": "word"
+      },
+      {
+        "text": "dan",
+        "start": 93.12,
+        "end": 93.2,
+        "type": "word"
+      },
+      {
+        "text": "perang",
+        "start": 93.28,
+        "end": 93.44,
+        "type": "word"
+      },
+      {
+        "text": "dunia...",
+        "start": 93.52,
+        "end": 94.32,
+        "type": "word"
+      },
+      {
+        "text": "mulai",
+        "start": 94.4,
+        "end": 94.56,
+        "type": "word"
+      },
+      {
+        "text": "menyatu",
+        "start": 94.64,
+        "end": 95.12,
+        "type": "word"
+      },
+      {
+        "text": "jadi",
+        "start": 95.2,
+        "end": 95.36,
+        "type": "word"
+      },
+      {
+        "text": "satu",
+        "start": 95.44,
+        "end": 95.68,
+        "type": "word"
+      },
+      {
+        "text": "medan.",
+        "start": 95.76,
+        "end": 96.16,
+        "type": "word"
+      },
+      {
+        "text": "Di",
+        "start": 96.64,
+        "end": 96.72,
+        "type": "word"
+      },
+      {
+        "text": "dunia",
+        "start": 96.76,
+        "end": 97.04,
+        "type": "word"
+      },
+      {
+        "text": "nyata,",
+        "start": 97.08,
+        "end": 97.68,
+        "type": "word"
+      },
+      {
+        "text": "melawan",
+        "start": 97.76,
+        "end": 98.0,
+        "type": "word"
+      },
+      {
+        "text": "Belanda",
+        "start": 98.08,
+        "end": 98.4,
+        "type": "word"
+      },
+      {
+        "text": "saja",
+        "start": 98.44,
+        "end": 98.72,
+        "type": "word"
+      },
+      {
+        "text": "butuh",
+        "start": 98.8,
+        "end": 99.12,
+        "type": "word"
+      },
+      {
+        "text": "empat",
+        "start": 99.24,
+        "end": 99.44,
+        "type": "word"
+      },
+      {
+        "text": "setengah",
+        "start": 99.52,
+        "end": 99.76,
+        "type": "word"
+      },
+      {
+        "text": "tahun.",
+        "start": 99.84,
+        "end": 100.44,
+        "type": "word"
+      },
+      {
+        "text": "Seandainya",
+        "start": 100.64,
+        "end": 101.2,
+        "type": "word"
+      },
+      {
+        "text": "lawannya",
+        "start": 101.28,
+        "end": 101.6,
+        "type": "word"
+      },
+      {
+        "text": "Jepang...",
+        "start": 101.64,
+        "end": 102.48,
+        "type": "word"
+      },
+      {
+        "text": "perangnya",
+        "start": 102.56,
+        "end": 102.88,
+        "type": "word"
+      },
+      {
+        "text": "lebih",
+        "start": 102.96,
+        "end": 103.12,
+        "type": "word"
+      },
+      {
+        "text": "brutal,",
+        "start": 103.2,
+        "end": 103.92,
+        "type": "word"
+      },
+      {
+        "text": "dan",
+        "start": 104.0,
+        "end": 104.16,
+        "type": "word"
+      },
+      {
+        "text": "lebih",
+        "start": 104.24,
+        "end": 104.48,
+        "type": "word"
+      },
+      {
+        "text": "panjang.",
+        "start": 104.56,
+        "end": 105.44,
+        "type": "word"
+      },
+      {
+        "text": "Tapi",
+        "start": 105.48,
+        "end": 105.84,
+        "type": "word"
+      },
+      {
+        "text": "arah",
+        "start": 105.92,
+        "end": 106.08,
+        "type": "word"
+      },
+      {
+        "text": "perang",
+        "start": 106.16,
+        "end": 106.4,
+        "type": "word"
+      },
+      {
+        "text": "jelas:",
+        "start": 106.44,
+        "end": 107.28,
+        "type": "word"
+      },
+      {
+        "text": "Jepang",
+        "start": 107.36,
+        "end": 107.76,
+        "type": "word"
+      },
+      {
+        "text": "tidak",
+        "start": 107.84,
+        "end": 108.0,
+        "type": "word"
+      },
+      {
+        "text": "bisa",
+        "start": 108.08,
+        "end": 108.32,
+        "type": "word"
+      },
+      {
+        "text": "menang",
+        "start": 108.4,
+        "end": 108.64,
+        "type": "word"
+      },
+      {
+        "text": "perang",
+        "start": 108.68,
+        "end": 108.8,
+        "type": "word"
+      },
+      {
+        "text": "panjang",
+        "start": 108.88,
+        "end": 109.28,
+        "type": "word"
+      },
+      {
+        "text": "di",
+        "start": 109.32,
+        "end": 109.36,
+        "type": "word"
+      },
+      {
+        "text": "negeri",
+        "start": 109.44,
+        "end": 109.72,
+        "type": "word"
+      },
+      {
+        "text": "orang...",
+        "start": 109.76,
+        "end": 110.4,
+        "type": "word"
+      },
+      {
+        "text": "dengan",
+        "start": 110.45,
+        "end": 110.56,
+        "type": "word"
+      },
+      {
+        "text": "logistik",
+        "start": 110.64,
+        "end": 111.12,
+        "type": "word"
+      },
+      {
+        "text": "yang",
+        "start": 111.2,
+        "end": 111.28,
+        "type": "word"
+      },
+      {
+        "text": "dipotong",
+        "start": 111.32,
+        "end": 111.76,
+        "type": "word"
+      },
+      {
+        "text": "dari",
+        "start": 111.84,
+        "end": 112.0,
+        "type": "word"
+      },
+      {
+        "text": "laut.",
+        "start": 112.08,
+        "end": 112.64,
+        "type": "word"
+      }
+    ]
+  }
+]

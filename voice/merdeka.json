@@ -1,0 +1,1605 @@
+[
+  {
+    "language_code": "ind",
+    "language_probability": 0.99,
+    "text": "Ada satu alasan Indonesia bisa merdeka yang buku pelajaran jarang tekankan: Jepang kalah perang. 15 Agustus 1945, Jepang menyerah tanpa syarat. Di Indonesia, mereka seketika kehilangan wewenang. Tapi Sekutu juga belum datang. Selama beberapa hari, negeri ini berjalan tanpa penguasa. Dan papan atas Jepang cuma bisa satu hal: menunggu, jaga status quo. Tapi di luar itu, ada persiapan yang sudah berjalan bertahun-tahun. Dari 1943, Jepang melatih puluhan ribu pemuda Indonesia di PETA dan Heiho. Bukan karena sayang, tapi karena mereka butuh tentara untuk perangnya. Jadi begitu Jepang kalah, kita tidak mulai dari nol. Kita sudah punya pemuda yang tahu cara mengorganisasi pasukan. Buktinya, dini hari 16 Agustus, golongan muda membawa Soekarno-Hatta ke Rengasdengklok. Mereka memaksa proklamasi dilakukan segera, tanpa nunggu izin siapa-siapa. Dua hari kemudian, kemerdekaan diumumkan. Lalu senjatanya? Datang dari gudang Jepang yang ditinggalkan. Di Surabaya, gudang Don Bosco, gudang senjata terbesar Jepang di kota itu, direbut di awal Oktober. Bekas PETA dan Heiho resmi jadi cikal bakal TNI, 5 Oktober 1945. Untungnya, Jepang pernah melatih pemuda kita bertempur. Sialnya, itu memang rencana mereka, bukan rencana kita. Bahkan nanti, kemerdekaan ini masih harus dipertahankan empat setengah tahun. Lewat perang, diplomasi, sampai tekanan dunia. Dan baru tanggal 27 Desember 1949, Belanda mengakuinya resmi. Jadi, bukan Jepang yang memberi kita merdeka. Mereka cuma yang tidak sengaja meninggalkan kunci di pintu. Dan kita, yang sudah tahu letak kuncinya, yang membukanya.",
+    "words": [
+      {
+        "text": "Ada",
+        "start": 0.0,
+        "end": 0.36,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "satu",
+        "start": 0.36,
+        "end": 0.62,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "alasan",
+        "start": 0.62,
+        "end": 0.94,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "Indonesia",
+        "start": 0.94,
+        "end": 1.4,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "bisa",
+        "start": 1.4,
+        "end": 1.7,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "merdeka",
+        "start": 1.7,
+        "end": 2.16,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "yang",
+        "start": 2.5,
+        "end": 2.86,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "buku",
+        "start": 2.86,
+        "end": 3.06,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "pelajaran",
+        "start": 3.06,
+        "end": 3.48,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "jarang",
+        "start": 3.48,
+        "end": 3.9,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "tekankan:",
+        "start": 3.9,
+        "end": 4.38,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "Jepang",
+        "start": 5.1,
+        "end": 5.36,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "kalah",
+        "start": 5.36,
+        "end": 5.68,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "perang.",
+        "start": 5.68,
+        "end": 6.0,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "15",
+        "start": 6.6,
+        "end": 6.92,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "Agustus",
+        "start": 6.92,
+        "end": 7.56,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "1945,",
+        "start": 7.74,
+        "end": 8.38,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "Jepang",
+        "start": 9.54,
+        "end": 9.76,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "menyerah",
+        "start": 9.76,
+        "end": 10.12,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "tanpa",
+        "start": 10.12,
+        "end": 10.56,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "syarat.",
+        "start": 10.56,
+        "end": 10.88,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "Di",
+        "start": 11.5,
+        "end": 11.66,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "Indonesia,",
+        "start": 11.66,
+        "end": 12.02,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "mereka",
+        "start": 12.68,
+        "end": 12.84,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "seketika",
+        "start": 12.84,
+        "end": 13.36,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "kehilangan",
+        "start": 13.36,
+        "end": 13.78,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "wewenang.",
+        "start": 13.78,
+        "end": 14.36,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "Tapi",
+        "start": 14.86,
+        "end": 15.1,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "Sekutu",
+        "start": 15.1,
+        "end": 15.5,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "juga",
+        "start": 15.5,
+        "end": 15.76,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "belum",
+        "start": 15.76,
+        "end": 15.92,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "datang.",
+        "start": 15.92,
+        "end": 16.4,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "Selama",
+        "start": 17.28,
+        "end": 17.66,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "beberapa",
+        "start": 17.66,
+        "end": 18.0,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "hari,",
+        "start": 18.0,
+        "end": 18.36,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "negeri",
+        "start": 18.64,
+        "end": 18.88,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "ini",
+        "start": 18.88,
+        "end": 19.08,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "berjalan",
+        "start": 19.08,
+        "end": 19.46,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "tanpa",
+        "start": 19.46,
+        "end": 19.82,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "penguasa.",
+        "start": 19.82,
+        "end": 20.3,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "Dan",
+        "start": 20.3,
+        "end": 21.18,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "papan",
+        "start": 21.18,
+        "end": 21.41,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "atas",
+        "start": 21.41,
+        "end": 21.64,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "Jepang",
+        "start": 21.64,
+        "end": 22.02,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "cuma",
+        "start": 22.02,
+        "end": 22.22,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "bisa",
+        "start": 22.22,
+        "end": 22.44,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "satu",
+        "start": 22.44,
+        "end": 22.7,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "hal:",
+        "start": 22.7,
+        "end": 23.06,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "menunggu,",
+        "start": 23.5,
+        "end": 23.98,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "jaga",
+        "start": 24.38,
+        "end": 24.74,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "status",
+        "start": 24.74,
+        "end": 24.94,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "quo.",
+        "start": 24.94,
+        "end": 25.3,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "Tapi",
+        "start": 26.0,
+        "end": 26.26,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "di",
+        "start": 26.26,
+        "end": 26.38,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "luar",
+        "start": 26.38,
+        "end": 26.6,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "itu,",
+        "start": 26.6,
+        "end": 26.94,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "ada",
+        "start": 27.34,
+        "end": 27.62,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "persiapan",
+        "start": 27.62,
+        "end": 28.1,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "yang",
+        "start": 28.1,
+        "end": 28.28,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "sudah",
+        "start": 28.28,
+        "end": 28.46,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "berjalan",
+        "start": 28.46,
+        "end": 28.92,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "bertahun-tahun.",
+        "start": 28.92,
+        "end": 29.84,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "Dari",
+        "start": 29.84,
+        "end": 30.76,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "1943,",
+        "start": 30.76,
+        "end": 31.74,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "Jepang",
+        "start": 32.38,
+        "end": 32.6,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "melatih",
+        "start": 32.6,
+        "end": 33.04,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "puluhan",
+        "start": 33.04,
+        "end": 33.52,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "ribu",
+        "start": 33.52,
+        "end": 33.9,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "pemuda",
+        "start": 33.9,
+        "end": 34.24,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "Indonesia",
+        "start": 34.24,
+        "end": 34.76,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "di",
+        "start": 34.76,
+        "end": 35.06,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "PETA",
+        "start": 35.06,
+        "end": 35.46,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "dan",
+        "start": 35.46,
+        "end": 35.66,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "Heiho.",
+        "start": 35.66,
+        "end": 36.06,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "Bukan",
+        "start": 36.86,
+        "end": 37.16,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "karena",
+        "start": 37.16,
+        "end": 37.54,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "sayang,",
+        "start": 37.54,
+        "end": 37.96,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "tapi",
+        "start": 38.38,
+        "end": 38.58,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "karena",
+        "start": 38.58,
+        "end": 38.84,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "mereka",
+        "start": 38.84,
+        "end": 39.14,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "butuh",
+        "start": 39.14,
+        "end": 39.48,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "tentara",
+        "start": 39.48,
+        "end": 39.9,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "untuk",
+        "start": 39.9,
+        "end": 40.16,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "perangnya.",
+        "start": 40.16,
+        "end": 40.68,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "Jadi",
+        "start": 41.42,
+        "end": 41.66,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "begitu",
+        "start": 41.66,
+        "end": 42.0,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "Jepang",
+        "start": 42.0,
+        "end": 42.28,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "kalah,",
+        "start": 42.28,
+        "end": 42.82,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "kita",
+        "start": 43.16,
+        "end": 43.34,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "tidak",
+        "start": 43.34,
+        "end": 43.56,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "mulai",
+        "start": 43.56,
+        "end": 43.88,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "dari",
+        "start": 43.88,
+        "end": 44.06,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "nol.",
+        "start": 44.06,
+        "end": 44.34,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "Kita",
+        "start": 45.1,
+        "end": 45.36,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "sudah",
+        "start": 45.36,
+        "end": 45.54,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "punya",
+        "start": 45.54,
+        "end": 45.82,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "pemuda",
+        "start": 45.82,
+        "end": 46.24,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "yang",
+        "start": 46.24,
+        "end": 46.42,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "tahu",
+        "start": 46.42,
+        "end": 46.7,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "cara",
+        "start": 46.7,
+        "end": 46.96,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "mengorganisasi",
+        "start": 46.96,
+        "end": 47.78,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "pasukan.",
+        "start": 47.78,
+        "end": 48.22,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "Buktinya,",
+        "start": 49.1,
+        "end": 49.58,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "dini",
+        "start": 49.96,
+        "end": 50.16,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "hari",
+        "start": 50.16,
+        "end": 50.36,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "16",
+        "start": 50.36,
+        "end": 50.74,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "Agustus,",
+        "start": 50.74,
+        "end": 51.46,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "golongan",
+        "start": 51.8,
+        "end": 52.28,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "muda",
+        "start": 52.28,
+        "end": 52.56,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "membawa",
+        "start": 52.56,
+        "end": 52.94,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "Soekarno-Hatta",
+        "start": 52.94,
+        "end": 53.54,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "ke",
+        "start": 53.54,
+        "end": 54.14,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "Rengasdengklok.",
+        "start": 54.14,
+        "end": 54.74,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "Mereka",
+        "start": 55.26,
+        "end": 55.66,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "memaksa",
+        "start": 55.66,
+        "end": 56.1,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "proklamasi",
+        "start": 56.1,
+        "end": 56.74,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "dilakukan",
+        "start": 56.74,
+        "end": 57.1,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "segera,",
+        "start": 57.1,
+        "end": 57.72,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "tanpa",
+        "start": 57.72,
+        "end": 58.4,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "nunggu",
+        "start": 58.4,
+        "end": 58.7,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "izin",
+        "start": 58.7,
+        "end": 59.0,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "siapa-siapa.",
+        "start": 59.0,
+        "end": 59.72,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "Dua",
+        "start": 60.44,
+        "end": 60.62,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "hari",
+        "start": 60.62,
+        "end": 60.82,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "kemudian,",
+        "start": 60.82,
+        "end": 61.34,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "kemerdekaan",
+        "start": 61.66,
+        "end": 62.2,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "diumumkan.",
+        "start": 62.2,
+        "end": 62.76,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "Lalu",
+        "start": 63.46,
+        "end": 63.68,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "senjatanya?",
+        "start": 63.68,
+        "end": 64.4,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "Datang",
+        "start": 64.4,
+        "end": 65.16,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "dari",
+        "start": 65.16,
+        "end": 65.34,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "gudang",
+        "start": 65.34,
+        "end": 65.64,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "Jepang",
+        "start": 65.64,
+        "end": 65.98,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "yang",
+        "start": 65.98,
+        "end": 66.16,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "ditinggalkan.",
+        "start": 66.16,
+        "end": 66.86,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "Di",
+        "start": 67.46,
+        "end": 67.58,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "Surabaya,",
+        "start": 67.58,
+        "end": 68.06,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "gudang",
+        "start": 68.64,
+        "end": 68.86,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "Don",
+        "start": 68.86,
+        "end": 69.02,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "Bosco,",
+        "start": 69.02,
+        "end": 69.5,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "gudang",
+        "start": 69.94,
+        "end": 70.22,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "senjata",
+        "start": 70.22,
+        "end": 70.58,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "terbesar",
+        "start": 70.58,
+        "end": 71.04,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "Jepang",
+        "start": 71.04,
+        "end": 71.36,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "di",
+        "start": 71.36,
+        "end": 71.5,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "kota",
+        "start": 71.5,
+        "end": 71.7,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "itu,",
+        "start": 71.7,
+        "end": 72.1,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "direbut",
+        "start": 72.48,
+        "end": 72.78,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "di",
+        "start": 72.78,
+        "end": 72.96,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "awal",
+        "start": 72.96,
+        "end": 73.24,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "Oktober.",
+        "start": 73.24,
+        "end": 73.85,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "Bekas",
+        "start": 73.85,
+        "end": 74.46,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "PETA",
+        "start": 74.46,
+        "end": 74.88,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "dan",
+        "start": 74.88,
+        "end": 75.04,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "Heiho",
+        "start": 75.04,
+        "end": 75.42,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "resmi",
+        "start": 75.84,
+        "end": 76.08,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "jadi",
+        "start": 76.08,
+        "end": 76.32,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "cikal",
+        "start": 76.32,
+        "end": 76.62,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "bakal",
+        "start": 76.62,
+        "end": 76.9,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "TNI,",
+        "start": 76.9,
+        "end": 77.34,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "5",
+        "start": 77.94,
+        "end": 78.16,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "Oktober",
+        "start": 78.16,
+        "end": 78.58,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "1945.",
+        "start": 78.58,
+        "end": 80.08,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "Untungnya,",
+        "start": 81.34,
+        "end": 81.78,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "Jepang",
+        "start": 82.28,
+        "end": 82.52,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "pernah",
+        "start": 82.52,
+        "end": 82.82,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "melatih",
+        "start": 82.82,
+        "end": 83.32,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "pemuda",
+        "start": 83.32,
+        "end": 83.68,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "kita",
+        "start": 83.68,
+        "end": 83.92,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "bertempur.",
+        "start": 83.92,
+        "end": 84.5,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "Sialnya,",
+        "start": 85.14,
+        "end": 85.68,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "itu",
+        "start": 86.16,
+        "end": 86.3,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "memang",
+        "start": 86.3,
+        "end": 86.48,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "rencana",
+        "start": 86.48,
+        "end": 86.88,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "mereka,",
+        "start": 86.88,
+        "end": 87.2,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "bukan",
+        "start": 87.78,
+        "end": 87.9,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "rencana",
+        "start": 87.9,
+        "end": 88.3,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "kita.",
+        "start": 88.3,
+        "end": 88.6,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "Bahkan",
+        "start": 89.32,
+        "end": 89.58,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "nanti,",
+        "start": 89.58,
+        "end": 89.98,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "kemerdekaan",
+        "start": 90.46,
+        "end": 90.59,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "ini",
+        "start": 90.59,
+        "end": 90.72,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "masih",
+        "start": 90.72,
+        "end": 91.0,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "harus",
+        "start": 91.0,
+        "end": 91.28,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "dipertahankan",
+        "start": 91.28,
+        "end": 92.06,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "empat",
+        "start": 92.06,
+        "end": 92.45,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "setengah",
+        "start": 92.45,
+        "end": 92.84,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "tahun.",
+        "start": 92.84,
+        "end": 93.16,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "Lewat",
+        "start": 93.78,
+        "end": 93.98,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "perang,",
+        "start": 93.98,
+        "end": 94.42,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "diplomasi,",
+        "start": 94.72,
+        "end": 95.42,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "sampai",
+        "start": 96.02,
+        "end": 96.2,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "tekanan",
+        "start": 96.2,
+        "end": 96.62,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "dunia.",
+        "start": 96.62,
+        "end": 97.02,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "Dan",
+        "start": 97.5,
+        "end": 97.98,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "baru",
+        "start": 97.98,
+        "end": 98.32,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "tanggal",
+        "start": 98.32,
+        "end": 98.58,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "27",
+        "start": 98.58,
+        "end": 99.04,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "Desember",
+        "start": 99.04,
+        "end": 99.73,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "1949,",
+        "start": 99.73,
+        "end": 100.42,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "Belanda",
+        "start": 101.32,
+        "end": 101.78,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "mengakuinya",
+        "start": 101.78,
+        "end": 102.34,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "resmi.",
+        "start": 102.34,
+        "end": 102.64,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "Jadi,",
+        "start": 103.46,
+        "end": 103.76,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "bukan",
+        "start": 104.18,
+        "end": 104.48,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "Jepang",
+        "start": 104.48,
+        "end": 104.86,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "yang",
+        "start": 104.86,
+        "end": 105.04,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "memberi",
+        "start": 105.04,
+        "end": 105.3,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "kita",
+        "start": 105.3,
+        "end": 105.52,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "merdeka.",
+        "start": 105.52,
+        "end": 105.96,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "Mereka",
+        "start": 106.74,
+        "end": 106.9,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "cuma",
+        "start": 106.9,
+        "end": 107.18,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "yang",
+        "start": 107.18,
+        "end": 107.4,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "tidak",
+        "start": 107.4,
+        "end": 107.62,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "sengaja",
+        "start": 107.62,
+        "end": 108.02,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "meninggalkan",
+        "start": 108.02,
+        "end": 108.64,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "kunci",
+        "start": 108.64,
+        "end": 108.94,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "di",
+        "start": 108.94,
+        "end": 109.08,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "pintu.",
+        "start": 109.08,
+        "end": 109.5,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "Dan",
+        "start": 110.12,
+        "end": 110.36,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "kita,",
+        "start": 110.36,
+        "end": 110.74,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "yang",
+        "start": 111.34,
+        "end": 111.44,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "sudah",
+        "start": 111.44,
+        "end": 111.64,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "tahu",
+        "start": 111.64,
+        "end": 111.98,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "letak",
+        "start": 111.98,
+        "end": 112.2,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "kuncinya,",
+        "start": 112.2,
+        "end": 112.76,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "yang",
+        "start": 113.24,
+        "end": 113.34,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      },
+      {
+        "text": "membukanya.",
+        "start": 113.34,
+        "end": 113.94,
+        "type": "word",
+        "speaker_id": "speaker_0"
+      }
+    ]
+  }
+]

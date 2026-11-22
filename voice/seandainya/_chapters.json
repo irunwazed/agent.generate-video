@@ -1,0 +1,82 @@
+[
+  {
+    "stem": "01_intro",
+    "start_s": 0.0,
+    "end_s": 73.99,
+    "vo_dur_s": 72.99,
+    "f_a": 0,
+    "f_b": 2220
+  },
+  {
+    "stem": "02_bab1a_pendudukan",
+    "start_s": 73.99,
+    "end_s": 219.26,
+    "vo_dur_s": 144.27,
+    "f_a": 2220,
+    "f_b": 6578
+  },
+  {
+    "stem": "03_bab1b_kelaparan_perlawanan",
+    "start_s": 219.26,
+    "end_s": 355.03,
+    "vo_dur_s": 134.77,
+    "f_a": 6578,
+    "f_b": 10651
+  },
+  {
+    "stem": "04_bab2_divergensi",
+    "start_s": 355.03,
+    "end_s": 523.5,
+    "vo_dur_s": 167.47,
+    "f_a": 10651,
+    "f_b": 15705
+  },
+  {
+    "stem": "05_bab3a_perang",
+    "start_s": 523.5,
+    "end_s": 639.73,
+    "vo_dur_s": 115.23,
+    "f_a": 15705,
+    "f_b": 19192
+  },
+  {
+    "stem": "06_bab3b_bertahan",
+    "start_s": 639.73,
+    "end_s": 753.32,
+    "vo_dur_s": 112.59,
+    "f_a": 19192,
+    "f_b": 22600
+  },
+  {
+    "stem": "07_bab4_twist",
+    "start_s": 753.32,
+    "end_s": 966.83,
+    "vo_dur_s": 212.51,
+    "f_a": 22600,
+    "f_b": 29005
+  },
+  {
+    "stem": "08_bab5_terburuk",
+    "start_s": 966.83,
+    "end_s": 1145.78,
+    "vo_dur_s": 177.95,
+    "f_a": 29005,
+    "f_b": 34373
+  },
+  {
+    "stem": "09_bab6_kemajuan",
+    "start_s": 1145.78,
+    "end_s": 1252.97,
+    "vo_dur_s": 106.19,
+    "f_a": 34373,
+    "f_b": 37589
+  },
+  {
+    "stem": "10_bab7_penutup",
+    "start_s": 1252.97,
+    "end_s": 1446.57,
+    "vo_dur_s": 192.6,
+    "f_a": 37589,
+    "f_b": 43397
+  }
+]

@@ -10,7 +10,12 @@
     "render:audio": "python scripts/gen-audio.py",
     "render:video": "node scripts/render-video.mjs",
     "render:captions": "node scripts/render-captions.mjs",
-    "build": "remotion bundle src/index.ts"
+    "build": "remotion bundle src/index.ts",
+    "kit:gallery": "node scripts/render.mjs --comp KitPoseGallery,KitPropGallery --mode stills --frames all --scale 1 --out out/kit/gallery/",
+    "kit:render": "node scripts/render.mjs",
+    "kit:check": "node scripts/check.mjs",
+    "skill:sync": "node scripts/sync-skill.mjs",
+    "typecheck": "tsc --noEmit"
   },
   "keywords": [
     "remotion",

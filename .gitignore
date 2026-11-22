@@ -41,3 +41,7 @@ desktop.ini
 .idea/
 *.sublime-project
 *.sublime-workspace
+
+# Secrets (ElevenLabs API key etc.)
+.env
+.env.*
