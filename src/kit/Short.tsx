@@ -5,10 +5,11 @@
 // visible shot (cross-fades show two). Input props: { post: { ink, lens, bloom, grade, dpr } } toggles for debugging.
 import React, { useEffect, useMemo } from "react";
 import * as THREE from "three";
-import { AbsoluteFill, Audio, Composition, Folder, getInputProps, staticFile, useCurrentFrame } from "remotion";
+import { AbsoluteFill, Audio, Composition, Folder, getInputProps, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
 import { ThreeCanvas } from "@remotion/three";
 import { useFrame, useThree } from "@react-three/fiber";
 import { BlendFunction, BloomEffect, Effect, EffectComposer, EffectPass, RenderPass, ToneMappingEffect, ToneMappingMode } from "postprocessing";
+import { REF } from "./core/ref";
 import { InkPass, noInkFallback } from "./core/ink";
 import { LensBlur } from "./core/lensblur";
 import { GradeEffect, GRADES, gradeFor } from "./core/grade";
@@ -24,7 +25,7 @@ const dprOverride = () => (getInputProps() as { post?: { dpr?: number } }).post?
 const makeBloom = () => {
   const b = new BloomEffect({ blendFunction: BlendFunction.ADD, intensity: 0.5, luminanceThreshold: 1.0, luminanceSmoothing: 0.2, mipmapBlur: true, levels: 6, radius: 0.6 });
   const mip = b.mipmapBlurPass, setSize = mip.setSize.bind(mip);
-  mip.setSize = (w: number, h: number) => setSize(Math.round((1920 * w) / Math.max(h, 1)), 1920);
+  mip.setSize = (w: number, h: number) => setSize(Math.round((REF.h * w) / Math.max(h, 1)), REF.h);
   return b;
 };
 const fwd = new THREE.Vector3(), fpt = new THREE.Vector3(), glSize = new THREE.Vector2();
@@ -75,26 +76,30 @@ const Inner: React.FC<{ project: Project; i: number; f: number }> = ({ project, 
   return <primitive object={world.root} dispose={null} />;
 };
 
-const ShotView: React.FC<{ project: Project; i: number; f: number; alpha: number }> = ({ project, i, f, alpha }) => (
+const ShotView: React.FC<{ project: Project; i: number; f: number; alpha: number }> = ({ project, i, f, alpha }) => {
+  REF.h = project.height ?? 1920;
+  return (
   <AbsoluteFill style={{ opacity: alpha }}>
     <ThreeCanvas width={project.width ?? 1080} height={project.height ?? 1920} {...(dprOverride() ? { dpr: dprOverride() } : {})} shadows
       gl={{ antialias: false, stencil: false, powerPreference: "high-performance", toneMappingExposure: 1.0 }} camera={{ fov: 36, near: 0.05, far: 1500 }}>
       <Inner project={project} i={i} f={f} />
     </ThreeCanvas>
   </AbsoluteFill>
-);
+  );
+};
 
 /** the caption overlay (chunks in seconds); same look as the merdeka / seandainya captions */
 export const CaptionOverlay: React.FC<{ chunks: { text: string; start: number; end: number }[]; fps: number; frameOffset?: number; bg?: string }> = ({ chunks, fps, frameOffset = 0, bg }) => {
+  const { width: W, height: H } = useVideoConfig();
   const time = (useCurrentFrame() + frameOffset) / fps;
   const c = chunks.find((x) => time >= x.start && time < x.end + 0.04);
   const pop = c ? 1 + 0.12 * Math.pow(1 - Math.min(1, Math.max(0, time - c.start) / 0.08), 2) : 1;
   return (
-    <AbsoluteFill style={{ backgroundColor: bg || "transparent", justifyContent: "flex-end", alignItems: "center", paddingBottom: 520, pointerEvents: "none" }}>
+    <AbsoluteFill style={{ backgroundColor: bg || "transparent", justifyContent: "flex-end", alignItems: "center", paddingBottom: Math.round(H * (W > H ? 0.07 : 0.27)), pointerEvents: "none" }}>
       {c && (
-        <span style={{ fontFamily: "'Poppins', 'Montserrat', 'Segoe UI', 'Arial Rounded MT Bold', sans-serif", fontWeight: 900, fontSize: 68, lineHeight: 1.15,
-          color: "#ffffff", WebkitTextStroke: "7px #000000", paintOrder: "stroke fill", textShadow: "0 6px 16px rgba(0,0,0,0.65)", textAlign: "center",
-          maxWidth: "85%", transform: `scale(${pop.toFixed(3)})`, display: "inline-block" }}>{c.text}</span>
+        <span style={{ fontFamily: "'Poppins', 'Montserrat', 'Segoe UI', 'Arial Rounded MT Bold', sans-serif", fontWeight: 900, fontSize: Math.round(W > H ? H * 0.055 : H * 0.0354), lineHeight: 1.15,
+          color: "#ffffff", WebkitTextStroke: `${Math.max(3, Math.round(H * 0.0036))}px #000000`, paintOrder: "stroke fill", textShadow: "0 6px 16px rgba(0,0,0,0.65)", textAlign: "center",
+          maxWidth: W > H ? "78%" : "85%", transform: `scale(${pop.toFixed(3)})`, display: "inline-block" }}>{c.text}</span>
       )}
     </AbsoluteFill>
   );

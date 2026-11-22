@@ -7,6 +7,7 @@ import * as THREE from "three";
 import { Pen, P2 } from "../toon/pen";
 import { cardShade, blobMaterial, CARD_K, makeZones, CardZones } from "../core/cardshade";
 import { NOINK } from "../core/ink";
+import { REF } from "../core/ref";
 import type { Joints } from "../rig/types";
 
 /** metres per design unit at card scale 1 (a standing adult = 777 units = 1.68 m; kit default scale 0.84 -> 1.41 m) */
@@ -76,7 +77,7 @@ export class Actor {
     this.geo.setIndex([0, 2, 1, 2, 3, 1]);
     this.mesh = new THREE.Mesh(this.geo, this.mat);
     this.mesh.customDepthMaterial = this.dmat;
-    this.mesh.onBeforeRender = (r) => { const rt = r.getRenderTarget(); CARD_K.uPx.value = (rt ? rt.height : r.domElement.height) / 1920; };
+    this.mesh.onBeforeRender = (r) => { const rt = r.getRenderTarget(); CARD_K.uPx.value = (rt ? rt.height : r.domElement.height) / REF.h; };
     this.mesh.castShadow = false; this.mesh.receiveShadow = true; this.mesh.visible = false; this.mesh.frustumCulled = false;
     this.mesh.rotation.order = "YXZ"; this.mesh.renderOrder = 1; this.mesh.layers.set(NOINK);
     parent.add(this.mesh);

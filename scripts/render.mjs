@@ -3,7 +3,7 @@
 //   node scripts/render.mjs --comp <Id[,Id2]> --mode stills   --frames 30,120,300-305|all --out out/<name>/stills/ [--scale 0.5]
 //   node scripts/render.mjs --comp <Id>        --mode previews --clips 0-104,300-404      --out out/<name>/previews/ [--scale 0.5] [--force]
 //   node scripts/render.mjs --comp <Id>        --mode video                               --out out/<name>/video.mp4 [--scale 1.3333]
-//   options: --props '{"post":{"lens":false}}'  (input props JSON)   --quality 92   --concurrency 2   --keep-bundle
+//   options: --crf 26 (video mode, smaller file)  --props '{"post":{"lens":false}}'  (input props JSON)   --quality 92   --concurrency 2   --keep-bundle
 //
 // Windows render environment (same as the old scripts): Chrome at C:/Program Files/Google/Chrome/Application/chrome.exe,
 // gl "angle", TEMP forced to D:/remotion-tmp (override with REMOTION_TMP). Every bundle copies public/ into TEMP;
@@ -27,6 +27,7 @@ const scale = Number(opt("scale", mode === "video" ? "1" : "0.5"));
 const inputProps = JSON.parse(opt("props", "{}"));
 const quality = Number(opt("quality", "92"));
 const concurrency = Number(opt("concurrency", "2"));
+const crfOpt = opt("crf", "");
 
 const remTmp = process.env.REMOTION_TMP || "D:/remotion-tmp";
 fs.mkdirSync(remTmp, { recursive: true });
@@ -76,7 +77,7 @@ for (const id of comps) {
     fs.mkdirSync(path.dirname(out), { recursive: true });
     const file = comps.length > 1 ? out.replace(/\.mp4$/, `_${id}.mp4`) : out;
     const t = Date.now();
-    await renderMedia({ composition, serveUrl, codec: "h264", outputLocation: file, scale, crf: 16, concurrency, inputProps, browserExecutable, chromiumOptions, timeoutInMilliseconds: 600000,
+    await renderMedia({ composition, serveUrl, codec: "h264", outputLocation: file, scale, crf: Number(crfOpt || 16), concurrency, inputProps, browserExecutable, chromiumOptions, timeoutInMilliseconds: 600000,
       onProgress: ({ progress }) => { if (Math.round(progress * 100) % 10 === 0) process.stdout.write(`\r  ${(progress * 100).toFixed(0)} %`); } });
     console.log(`\n  ${file}  (${((Date.now() - t) / 1000).toFixed(0)} s)`);
   } else { console.error(`unknown --mode ${mode}`); process.exit(2); }

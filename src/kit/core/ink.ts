@@ -22,6 +22,7 @@
 //     DOF + Bloom + ToneMapping EffectPass: the depth of field then blurs the lines together with the background.
 // Verified in a toy scene with this exact stack (MSAA 4, HalfFloat, DOF/Bloom/Neutral): compiles, no GL errors,
 // measured EW 3.7 / 3.2 / 2.6 / 1.5 / 1.1 px at 3 / 12 / 25 / 90 / 200 m (silhouettes) and 2.3 -> 0.9 px (creases).
+import { REF } from "./ref";
 import * as THREE from "three";
 import { Pass } from "postprocessing";
 
@@ -318,7 +319,7 @@ export class InkPass extends Pass {
     this.maskRT.setSize(width, height);
     this.tmpRT.setSize(width, height);
     (this.maskMat.uniforms.texel.value as THREE.Vector2).set(1 / width, 1 / height);
-    this.maskMat.uniforms.pxScale.value = height / 1920; // widths are specified at 1080x1920
+    this.maskMat.uniforms.pxScale.value = height / REF.h; // widths are specified at 1080x1920
   }
 
   override render(renderer: THREE.WebGLRenderer, inputBuffer: THREE.WebGLRenderTarget) {

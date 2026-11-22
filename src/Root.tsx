@@ -28,6 +28,8 @@ import { PROJECT as KITTEST } from "./videos/kittest/project";
 import { LOCATIONS_PROJECT } from "./kit/gallery/locationsProject";
 import { VEHICLES_PROJECT } from "./kit/gallery/vehiclesProject";
 import { PROJECT as KITACTIONS } from "./videos/kitactions/project";
+import { PROJECT as SEANDAINYA16 } from "./videos/seandainya16/project";
+import { CHAPTERS, chapterProject } from "./videos/seandainya16/chapters";
 
 export const Root: React.FC = () => {
   return (
@@ -41,6 +43,8 @@ export const Root: React.FC = () => {
       {kitCompositions("KitLocations", LOCATIONS_PROJECT)}
       {kitCompositions("KitVehicles", VEHICLES_PROJECT)}
       {kitCompositions("KitActions", KITACTIONS)}
+      {kitCompositions("Seandainya16", SEANDAINYA16)}
+      {CHAPTERS.map((c) => <React.Fragment key={c.n}>{kitCompositions(`Seandainya16Ch${String(c.n).padStart(2, "0")}`, chapterProject(c.n))}</React.Fragment>)}
       <Folder name="Seandainya">
         <Composition
           id="SeandainyaShort"

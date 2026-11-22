@@ -10,6 +10,7 @@
 // may never spread wider than this pixel's own CoC (sharp subjects keep clean silhouettes), and the result is
 // renormalised by the accepted weights. Fixed sample pattern, no per-pixel noise: no grain, no frame-to-frame flicker.
 // Both passes are CONVOLUTION effects, so R3F's <EffectComposer> gives each its own EffectPass.
+import { REF } from "./ref";
 import { Effect, EffectAttribute, BlendFunction } from "postprocessing";
 import { Uniform } from "three";
 
@@ -73,7 +74,7 @@ const MAIN: Stage = { taps: 64, spread: 0.958, nearTaps: 32, rot: 0 };
 
 export class LensBlurEffect extends Effect {
   constructor({ maxCoC = 24, nearScale = 1.2, stage = MAIN }: { maxCoC?: number; nearScale?: number; stage?: Stage } = {}) {
-    super("LensBlurEffect", frag, {
+    super("LensBlurEffect", frag.split("1920.0").join(REF.h.toFixed(1)), {
       blendFunction: BlendFunction.NORMAL,
       attributes: EffectAttribute.DEPTH | EffectAttribute.CONVOLUTION,
       defines: new Map<string, string>([
@@ -129,7 +130,7 @@ void mainImage(const in vec4 inputColor, const in vec2 uv, out vec4 outputColor)
 
 export class GrainEffect extends Effect {
   constructor({ amount = 0.025, cellPx = 1.5 }: { amount?: number; cellPx?: number } = {}) {
-    super("GrainEffect", grainFrag, {
+    super("GrainEffect", grainFrag.split("1920.0").join(REF.h.toFixed(1)), {
       blendFunction: BlendFunction.NORMAL,
       uniforms: new Map<string, Uniform>([["seed", new Uniform(0)], ["amount", new Uniform(amount)], ["cellPx", new Uniform(cellPx)]]),
     });

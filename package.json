@@ -20,7 +20,8 @@
     "kit:vehicles": "node scripts/render.mjs --comp KitVehiclesShort --mode stills --frames 15,45,75,105,135,165,195,225,255,285,315 --scale 0.5 --out out/kit/vehicles/",
     "kit:sfx": "node scripts/kit-run.mjs sfx",
     "kit:sfxmix": "python scripts/kit-sfx-mix.py",
-    "kit:frame": "node scripts/kit-run.mjs frame"
+    "kit:frame": "node scripts/kit-run.mjs frame",
+    "kit:shots": "node scripts/kit-run.mjs shots"
   },
   "keywords": [
     "remotion",
